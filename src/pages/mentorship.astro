@@ -1,0 +1,52 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header title={SITE_TITLE} />
+		<main>
+			<h1>🏁 Mentorship for VueJS</h1>
+			<p>
+				I’m a software engineer that loves using VueJS. I’ve been using Vue for 4 years and have not looked back. Let me guide and fast track you to using Vue today.
+			</p>
+
+			<h2>My Stack</h2>
+			<b>The Vue Ecosystem</b>
+			<p>
+      Vue is simple and comes with great documentation. This however does not mean the ecosystem is not complex and full of options. Let’s explore the options and develop a path towards minimal roadblocks and maximum value.
+			</p>
+
+			<ul>
+        <li><b>Nuxt</b> - The Intuitive Vue Framework</li>
+        <li><b>Netlify</b> - The fastest way to build the fastest sites</li>
+        <li><b>Storybook</b> - UI Component explorer for frontend developers</li>
+        <li><b>TailwindCSS</b> - A utility-first CSS framework for rapidly building custom designs</li>
+			</ul>
+
+			<h2>Services</h2>
+      <b>Multiple angles of learning</b>
+      <p>
+      Coaching from Mentor, Peer and Alumni support, through Pair Programming, chat and PR Review.
+      </p>
+
+      <ul>
+        <li><b>Pair Programming</b> - The Intuitive Vue Framework</li>
+        <li><b>Peer Programming</b> - The fastest way to build the fastest sites</li>
+        <li><b>Invitation to Private Slack Server
+</b> - UI Component explorer for frontend developers</li>
+        <li><b>Pull Request Review
+CSS</b> - A utility-first CSS framework for rapidly building custom designs</li>
+      </ul>
+		</main>
+		<Footer />
+	</body>
+</html>
+

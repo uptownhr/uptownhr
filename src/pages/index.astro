@@ -1,0 +1,36 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header title={SITE_TITLE} />
+		<main>
+			<h1>🧑‍🚀 Hi! I'm James Lee,</h1>
+			<p>
+				A Software Engineer, a husband, and a father of two kids. I enjoy tackling issues related to SMBs and enabling entrepreneurs. My mission is to remove the friction of one becoming an entrepreneur and increase the amount of Small Business in the world.
+			</p>
+
+			<h2>Current Work</h2>
+			<b>Bambee - Platform Services</b>
+			<p>
+      Working within a newly formed team to tackle Payroll. My primary role is to provide architectural support for interfacing with the Core platform. Payroll is our first new product that is running as an independent service and will be paving the patterns towards microservice architecture.
+			</p>
+
+			<h2>Mentorship</h2>
+			<b>VueJS Mentorship</b>
+			<p>
+				I'm looking to work with another engineer to develop a mastery with VueJS. I can share my past 4+ years of experience and looking for a partner to tackle challenges together.
+			</p>
+			<a href="/mentorship">Vue Mentorship Details</a>
+		</main>
+		<Footer />
+	</body>
+</html>
