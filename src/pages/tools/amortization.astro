@@ -1,0 +1,23 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../config';
+import Amortization from '../../components/Amortization.svelte'
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title="Amortization Schedule Generator" description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header title={SITE_TITLE} />
+		<main>
+			<h1>🏁 Amortization Schedule Generator</h1>
+			<Amortization client:only />
+		</main>
+		<Footer />
+	</body>
+</html>
