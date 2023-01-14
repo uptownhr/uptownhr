@@ -1,9 +1,14 @@
 ---
+import HeaderLink from './HeaderLink.astro';
 const today = new Date();
 ---
 
 <footer>
 	&copy; {today.getFullYear()} James Lee. All rights reserved.
+	<nav>
+	  <HeaderLink href="https://www.linkedin.com/in/uptown/" target="_blank" rel="noopener">LinkedIn</HeaderLink>
+    <HeaderLink href="https://github.com/uptownhr" target="_blank">GitHub</HeaderLink>
+	</nav>
 </footer>
 <style>
 	footer {
