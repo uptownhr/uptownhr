@@ -13,6 +13,7 @@
     },
 
     additionalPayments: '',
+    ...loan,
   };
 
   $: schedule = amortization({
