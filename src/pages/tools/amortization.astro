@@ -5,17 +5,19 @@ import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../config';
 import Amortization from '@modules/loan/Amortization.svelte'
 
+const pageTitle = 'Loan Amortization Schedule Generator';
+
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<BaseHead title="Amortization Schedule Generator" description={SITE_DESCRIPTION} />
+		<BaseHead title={pageTitle} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
 		<Header title={SITE_TITLE} />
 		<main>
-			<h1>🏁 Amortization Schedule Generator</h1>
+			<h1>🏁 {pageTitle}</h1>
 			<Amortization client:only />
 		</main>
 		<Footer />
