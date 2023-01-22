@@ -4,8 +4,6 @@
 
   const loan = store.get('loan');
 
-  console.log('saved', loan);
-
   let form = {
     terms: {
       amount: 10000,
