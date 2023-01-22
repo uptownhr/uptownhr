@@ -1,6 +1,7 @@
 <script>
   import { createLoan } from './useCases/createLoan';
   import { amortization } from './amortization';
+  import store from 'store';
 
   let principal = 1000;
   let interestRate = 0.1;
@@ -17,7 +18,13 @@
     new Date(startDate)
   );
 
-  function saveLoan() {}
+  function saveLoan() {
+    let test = createLoan();
+    store.set('loan', test);
+
+    const x = store.get('loan');
+    console.log('x', x);
+  }
 </script>
 
 <div>
