@@ -1,7 +1,7 @@
 import * as uuid from 'uuid';
 interface Terms {
   amount: number;
-  term: number;
+  termLength: number;
   interestRate: number;
   startDate: Date;
 }

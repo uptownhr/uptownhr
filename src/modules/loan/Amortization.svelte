@@ -3,11 +3,15 @@
   import { amortization } from './amortization';
   import store from 'store';
 
-  let principal = 1000;
-  let interestRate = 0.1;
-  let term = 5;
+  const saved = store.get('loan');
+
+  console.log('saved', saved);
+
+  let principal = saved?.terms?.amount ?? 1000;
+  let interestRate = saved?.terms?.interestRate ?? 0.1;
+  let term = saved?.terms?.termLength ?? 5;
   let additionalPayments = '';
-  let startDate = '2023-01-01';
+  let startDate = saved?.terms?.startDate ?? '2023-01-01';
   let schedule;
 
   $: schedule = amortization(
@@ -20,6 +24,14 @@
 
   function saveLoan() {
     let test = createLoan();
+
+    test.setTerms({
+      interestRate,
+      startDate,
+      amount: principal,
+      termLength: term,
+    });
+
     store.set('loan', test);
 
     const x = store.get('loan');

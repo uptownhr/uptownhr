@@ -1,7 +1,7 @@
 import { Loan } from '@modules/loan/models/Loan';
 
-export function createLoan() {
-  const loan = new Loan();
+export function saveLoan(loanProperties: Partial<Loan>) {
+  const loan = new Loan(loanProperties.terms);
 
   return loan;
 }
