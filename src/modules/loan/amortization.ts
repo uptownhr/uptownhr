@@ -1,4 +1,10 @@
-export function amortization(principal, interestRate, term, additionalPayments, startDate) {
+export function amortization(
+  principal: number,
+  interestRate: number,
+  term: number,
+  additionalPayments: number[],
+  startDate: Date
+) {
   var payments = [];
   var i = interestRate / 12;
   var n = term * 12;
@@ -15,18 +21,27 @@ export function amortization(principal, interestRate, term, additionalPayments, 
       if (currentBalance > additionalPayment) {
         principalPayment += additionalPayment;
         currentBalance -= additionalPayment;
-      }
-      else {
+      } else {
         principalPayment += currentBalance;
         currentBalance = 0;
       }
     }
     currentBalance = currentBalance - principalPayment;
-    var month = j+1;
-    var dueDate = new Date(startDate.getFullYear(), startDate.getMonth() + j, startDate.getDate())
-    payments.push({month: month, dueDate: dueDate, interest: interest, principal: principalPayment, balance: currentBalance});
+    var month = j + 1;
+    var dueDate = new Date(
+      startDate.getFullYear(),
+      startDate.getMonth() + j,
+      startDate.getDate()
+    );
+    payments.push({
+      month: month,
+      dueDate: dueDate,
+      interest: interest,
+      principal: principalPayment,
+      balance: currentBalance,
+    });
   }
   var totalCost = principal + totalInterest;
-  console.log({payments: payments, totalCost: totalCost})
-  return {payments: payments, totalCost: totalCost};
+  console.log({ payments: payments, totalCost: totalCost });
+  return { payments: payments, totalCost: totalCost };
 }
