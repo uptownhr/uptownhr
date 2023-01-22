@@ -1,70 +1,61 @@
 <script>
-  import { createLoan } from './useCases/createLoan';
   import { amortization } from './amortization';
   import store from 'store';
 
-  const saved = store.get('loan');
+  const loan = store.get('loan');
 
-  console.log('saved', saved);
+  console.log('saved', loan);
 
-  let principal = saved?.terms?.amount ?? 1000;
-  let interestRate = saved?.terms?.interestRate ?? 0.1;
-  let term = saved?.terms?.termLength ?? 5;
-  let additionalPayments = '';
-  let startDate = saved?.terms?.startDate ?? '2023-01-01';
-  let schedule;
+  let form = {
+    terms: {
+      amount: 10000,
+      interestRate: 0.1,
+      termLength: 3,
+      startDate: '2023-01-01',
+    },
 
-  $: schedule = amortization(
-    principal,
-    interestRate,
-    term,
-    additionalPayments.split(','),
-    new Date(startDate)
-  );
+    additionalPayments: '',
+  };
+
+  $: schedule = amortization({
+    principal: form.terms.amount,
+    interestRate: form.terms.interestRate,
+    termLength: form.terms.termLength,
+    additionalPayments: form.additionalPayments.split(','),
+    startDate: new Date(form.terms.startDate),
+  });
 
   function saveLoan() {
-    let test = createLoan();
-
-    test.setTerms({
-      interestRate,
-      startDate,
-      amount: principal,
-      termLength: term,
-    });
-
-    store.set('loan', test);
-
-    const x = store.get('loan');
-    console.log('x', x);
+    store.set('loan', form);
   }
 </script>
 
 <div>
   <form on:submit|preventDefault={saveLoan}>
     <label for="principal">Principal:</label>
-    <input type="number" id="principal" bind:value={principal} />
+    <input type="number" id="principal" bind:value={form.terms.amount} />
     <br />
     <label for="interestRate">Interest Rate:</label>
     <input
       type="number"
       id="interestRate"
       step="0.01"
-      bind:value={interestRate}
+      bind:value={form.terms.interestRate}
     />
     <br />
 
     <label for="term">Term (years):</label>
-    <input type="number" id="term" bind:value={term} />
+    <input type="number" id="term" bind:value={form.terms.termLength} />
     <br />
     <label for="additionalPayments">Additional Payments:</label>
     <input
       type="text"
       id="additionalPayments"
-      bind:value={additionalPayments}
+      bind:value={form.additionalPayments}
     />
     <br />
     <label for="startDate">Start Date:</label>
-    <input type="date" id="startDate" bind:value={startDate} />
+    <input type="date" id="startDate" bind:value={form.terms.startDate} />
     <button type="submit">Save</button>
   </form>
 </div>

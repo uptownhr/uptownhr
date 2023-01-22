@@ -1,13 +1,20 @@
-export function amortization(
-  principal: number,
-  interestRate: number,
-  term: number,
-  additionalPayments: number[],
-  startDate: Date
-) {
+export interface GenerateAmortizationSchedule {
+  principal: number;
+  interestRate: number;
+  termLength: number;
+  additionalPayments: number[];
+  startDate: Date;
+}
+export function amortization({
+  principal,
+  interestRate,
+  termLength,
+  additionalPayments,
+  startDate,
+}: GenerateAmortizationSchedule) {
   var payments = [];
   var i = interestRate / 12;
-  var n = term * 12;
+  var n = termLength * 12;
   var x = Math.pow(1 + i, n);
   var monthlyPayment = (principal * x * i) / (x - 1);
   var currentBalance = principal;
