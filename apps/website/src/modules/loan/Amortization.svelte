@@ -1,5 +1,5 @@
 <script>
-  import { amortization } from './amortization';
+  import { amortization } from './amortization.ts';
   import store from 'store';
 
   const loan = store.get('loan');
