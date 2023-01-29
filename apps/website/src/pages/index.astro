@@ -13,24 +13,42 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 	<body>
 		<Header title={SITE_TITLE} />
 		<main>
-			<h1>🧑‍🚀 Hi! I'm James Lee,</h1>
+			<h1>Software Engineer</h1>
 			<p>
-				A Software Engineer, a husband, and a father of two kids. I enjoy tackling issues related to SMBs and enabling entrepreneurs. My mission is to remove the friction of one becoming an entrepreneur and increase the amount of Small Businesses in the world.
+				A software engineer, a husband, and a father of two kids. I enjoy tackling issues related to SMBs and enabling entrepreneurs. My mission is to remove the friction of one becoming an entrepreneur and increase the amount of Small Businesses in the world.
 			</p>
 
-			<h2>Current Work</h2>
-			<b>Bambee - Platform Services</b>
+			<h2>Startups</h2>
+			<a href="https://www.bambee.com" target="_blank">Bambee</a> - VP, Platform Services
 			<p>
-      Working within a newly formed team to tackle Payroll. My primary role is to provide architectural support for interfacing with the Core platform. Payroll is our first new product that is running as an independent service and will be paving the patterns towards microservice architecture.
+      Bambee provides SMBs in the United States with a Dedicated HR Manager to manage compliance documentation, payroll and employee education.
 			</p>
 
-			<h2>Mentorship</h2>
-			<b>VueJS Mentorship</b>
+			<h2>Projects</h2>
+			<a href="/mentorship">Vue Mentorship</a>
 			<p>
 				I'm looking to work with another engineer to develop a mastery with VueJS. I can share my past 4+ years of experience and looking for a partner to tackle challenges together.
 			</p>
-			<a href="/mentorship">Vue Mentorship Details</a>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+ h2 {
+   border-bottom: #eee 1px solid;
+ }
+
+ a {
+  box-shadow: inset 0 -3px 0 -1px #00e;
+  padding-bottom: 2px;
+  text-decoration: none;
+  color: #222;
+  transition: box-shadow .15s ease-in-out
+ }
+
+ a:hover {
+   color: #fff;
+   box-shadow: inset 0 -30px 0 -1px #00e;
+ }
+</style>
