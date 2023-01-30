@@ -18,6 +18,15 @@ export class SupertokensService {
         Passwordless.init({
           flowType: 'MAGIC_LINK',
           contactMethod: 'EMAIL',
+          /*emailDelivery: {
+            service: {
+              sendEmail: async (input) => {
+                console.log('send email', {
+                  input,
+                });
+              },
+            },
+          },*/
         }),
         Session.init(),
       ],
