@@ -17,9 +17,12 @@ async function bootstrap() {
   const configService = app.get(ConfigService<Configuration, true>);
 
   const port = configService.get('port', { infer: true });
+  const websiteDomain = configService.get('supertokens.websiteDomain', {
+    infer: true,
+  });
 
   app.enableCors({
-    origin: ['http://localhost:3000'],
+    origin: [websiteDomain],
     allowedHeaders: ['content-type', ...supertokens.getAllCORSHeaders()],
     credentials: true,
   });
