@@ -1,0 +1,7 @@
+### Send POST request with json body
+POST http://localhost:3001/auth/signinup/code
+Content-Type: application/json
+
+{
+  "email": "uptownhr@gmail.com"
+}

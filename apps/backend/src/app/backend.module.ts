@@ -1,7 +1,7 @@
-import { MiddlewareConsumer, Module } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AuthMiddleware, AuthModule } from '@uptownhr/auth-module';
+import { AuthModule } from '@uptownhr/auth-module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import configuration, { Configuration } from '../configuration/configuration';
 
@@ -32,8 +32,4 @@ import configuration, { Configuration } from '../configuration/configuration';
   controllers: [AppController],
   providers: [AppService],
 })
-export class BackendModule {
-  configure(consumer: MiddlewareConsumer) {
-    consumer.apply(AuthMiddleware).forRoutes('*');
-  }
-}
+export class BackendModule {}

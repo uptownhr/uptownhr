@@ -7,7 +7,7 @@ import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import supertokens from 'supertokens-node';
 
-import { BackendModule } from './app/backendModule';
+import { BackendModule } from './app/backend.module';
 import { SupertokensExceptionFilter } from '@uptownhr/auth-module';
 import { ConfigService } from '@nestjs/config';
 import { Configuration } from './configuration/configuration';
@@ -19,8 +19,9 @@ async function bootstrap() {
   const port = configService.get('port', { infer: true });
 
   app.enableCors({
-    origin: ['localhost:3000'],
-    allowedHeaders: ['Content-Type', ...supertokens.getAllCORSHeaders()],
+    origin: ['http://localhost:3000'],
+    allowedHeaders: ['content-type', ...supertokens.getAllCORSHeaders()],
+    credentials: true,
   });
 
   app.useGlobalFilters(new SupertokensExceptionFilter());
