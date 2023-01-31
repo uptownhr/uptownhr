@@ -1,9 +1,6 @@
 import { AppInfo } from 'supertokens-node/types';
 
-export const ConfigInjectionToken = 'ConfigInjectionToken';
-
-export type AuthModuleConfig = {
-  appInfo: AppInfo;
+export interface AuthModuleConfig extends AppInfo {
   connectionURI: string;
   apiKey?: string;
-};
+}

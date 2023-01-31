@@ -15,9 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@play/auth-module": ["libs/auth-module/src/index.ts"],
-      "@play/common": ["libs/common/src/index.js"]
-    }
+      "@uptownhr/auth-module": ["libs/auth-module/src/index.ts"],
+    },
+    "strictNullChecks": true
   },
   "exclude": ["node_modules", "tmp"]
 }

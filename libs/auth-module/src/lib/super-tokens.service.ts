@@ -3,13 +3,20 @@ import supertokens from 'supertokens-node';
 import Session from 'supertokens-node/recipe/session';
 import Passwordless from 'supertokens-node/recipe/passwordless';
 
-import { ConfigInjectionToken, AuthModuleConfig } from './config.interface';
+import { AuthModuleConfig } from './config.interface';
+import { MODULE_OPTIONS_TOKEN } from './auth.module-definition';
 
 @Injectable()
 export class SupertokensService {
-  constructor(@Inject(ConfigInjectionToken) private config: AuthModuleConfig) {
+  constructor(@Inject(MODULE_OPTIONS_TOKEN) private config: AuthModuleConfig) {
     supertokens.init({
-      appInfo: config.appInfo,
+      appInfo: {
+        appName: this.config.appName,
+        apiDomain: this.config.apiDomain,
+        websiteDomain: this.config.websiteDomain,
+        apiBasePath: this.config.apiBasePath,
+        websiteBasePath: this.config.websiteBasePath,
+      },
       supertokens: {
         connectionURI: config.connectionURI,
         apiKey: config.apiKey,
