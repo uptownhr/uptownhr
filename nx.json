@@ -1,12 +1,20 @@
 {
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "plugins": ["@nxtensions/astro"],
-  "npmScope": "play",
+  "npmScope": "uptownhr",
   "targetDefaults": {
     "build": {
       "dependsOn": ["^build"]
     },
     "lint": {
       "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+    },
+    "test": {
+      "inputs": [
+        "default",
+        "^default",
+        "{workspaceRoot}/jest.preset.ts"
+      ]
     }
   },
   "tasksRunnerOptions": {
