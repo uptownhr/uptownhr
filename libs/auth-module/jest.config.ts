@@ -1,7 +1,7 @@
 /* eslint-disable */
 export default {
   displayName: 'auth-module',
-  preset: '../../jest.preset.ts',
+  preset: '../../jest.preset.js',
   globals: {
     'ts-jest': {
       tsconfig: '<rootDir>/tsconfig.spec.json',

@@ -7,13 +7,13 @@ import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import supertokens from 'supertokens-node';
 
-import { AppModule } from './app/app.module';
+import { BackendModule } from './app/backendModule';
 import { SupertokensExceptionFilter } from '@uptownhr/auth-module';
 import { ConfigService } from '@nestjs/config';
 import { Configuration } from './configuration/configuration';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(BackendModule);
   const configService = app.get(ConfigService<Configuration, true>);
 
   const port = configService.get('port', { infer: true });

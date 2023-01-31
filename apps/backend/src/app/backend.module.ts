@@ -32,7 +32,7 @@ import configuration, { Configuration } from '../configuration/configuration';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {
+export class BackendModule {
   configure(consumer: MiddlewareConsumer) {
     consumer.apply(AuthMiddleware).forRoutes('*');
   }
