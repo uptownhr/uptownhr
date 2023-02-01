@@ -4680,6 +4680,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"browser-tabs-lock@npm:^1.2.14":
+  version: 1.2.15
+  resolution: "browser-tabs-lock@npm:1.2.15"
+  dependencies:
+    lodash: ">=4.17.21"
+  checksum: 79194361d5dbd0bf83f1e7e56fdbc209161d1c86f8211214512388df126d69b152512f073392e9415dec8d5e3b427045f9a9a3cb089ae7e7f6ed48dd6022ae74
+  languageName: node
+  linkType: hard
+
 "browserslist@npm:^4.0.0, browserslist@npm:^4.14.5, browserslist@npm:^4.16.6":
   version: 4.21.5
   resolution: "browserslist@npm:4.21.5"
@@ -9576,7 +9585,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:4.17.21, lodash@npm:^4.17.21":
+"lodash@npm:4.17.21, lodash@npm:>=4.17.21, lodash@npm:^4.17.21":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
@@ -13541,7 +13550,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"supertokens-js-override@npm:^0.0.4":
+"supertokens-js-override@npm:0.0.4, supertokens-js-override@npm:^0.0.4":
   version: 0.0.4
   resolution: "supertokens-js-override@npm:0.0.4"
   checksum: 1486212cf2a364f798781065c598cc4a6519fdf232c5cf9f159c70637722669aa078f70a443f5a406bbc2bb5283c40cd44dea3f1bc0ac75d2ced1fdba37e1b0d
@@ -13566,6 +13575,26 @@ __metadata:
     twilio: ^3.76.0
     verify-apple-id-token: ^2.1.0
   checksum: 09f60c9818156705294a446a9be480106bf5aa7ede9f046955b828d6d8ea8ac0d2791839dbefbcd0b0441ed348bcb3c50a9e77541a64ec08323d6335e14defaa
+  languageName: node
+  linkType: hard
+
+"supertokens-web-js@npm:^0.4.1":
+  version: 0.4.1
+  resolution: "supertokens-web-js@npm:0.4.1"
+  dependencies:
+    supertokens-js-override: 0.0.4
+    supertokens-website: ^15.0.0
+  checksum: add925d5aff5326d95206356636b8b7580283f9b759bdc74f253c3fbe09ad233b696ef1f321ff16082f7573c33b28828620a14dbea3fb40b414b9bc2697eae5e
+  languageName: node
+  linkType: hard
+
+"supertokens-website@npm:^15.0.0":
+  version: 15.0.0
+  resolution: "supertokens-website@npm:15.0.0"
+  dependencies:
+    browser-tabs-lock: ^1.2.14
+    supertokens-js-override: ^0.0.4
+  checksum: 261d033838a893f9bdbda93d8df4bd0db253a59988ea9518e93d1f3a9bdfdd16bcb80f2a614183f3926d847d72ba79a2f3a4cef7b41bb862651ca67b2235cf27
   languageName: node
   linkType: hard
 
@@ -14465,6 +14494,7 @@ __metadata:
     rxjs: ^7.0.0
     store: ^2.0.12
     supertokens-node: ^12.1.6
+    supertokens-web-js: ^0.4.1
     svelte: ^3.54.0
     ts-jest: 28.0.5
     ts-node: 10.9.1

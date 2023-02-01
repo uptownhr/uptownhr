@@ -3,23 +3,21 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
-
+import Login from '../modules/auth/Login.svelte';
 
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title="Contact Me" description={SITE_DESCRIPTION} />
 	</head>
 	<body>
 		<Header />
 		<main>
-			<section>
-				<ul>
-				  <li><a href="/tools/loan-amortization-schedule-generator">Loan Amortization Schedule Generator</a></li>
-				</ul>
-			</section>
+			<h1>Contact Me</h1>
+			<p>Please provide an email for me to contact you back.</p>
+			<Login client:only />
 		</main>
 		<Footer />
 	</body>

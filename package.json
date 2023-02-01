@@ -27,6 +27,7 @@
     "rxjs": "^7.0.0",
     "store": "^2.0.12",
     "supertokens-node": "^12.1.6",
+    "supertokens-web-js": "^0.4.1",
     "svelte": "^3.54.0",
     "tslib": "^2.3.0",
     "uuid": "^9.0.0"

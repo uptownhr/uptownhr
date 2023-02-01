@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+import { isThisSameBrowserAndDevice } from '../../modules/auth/login'
+import { consumeCode } from 'supertokens-web-js/recipe/passwordless';
+
+async function handleMagicLinkClicked() {
+    try {
+        let response = await consumeCode();
+        console.log(response, response.user);
+        if (response.status === "OK") {
+            if (response.createdNewUser) {
+                // user sign up success
+            } else {
+                // user sign in success
+            }
+            window.location.assign("/contact")
+        } else {
+            // this can happen if the magic link has expired or is invalid
+            window.alert("Login failed. Please try again");
+            window.location.assign("/contact")
+        }
+    } catch (err: any) {
+        if (err.isSuperTokensGeneralError === true) {
+            // this may be a custom error message sent from the API by you.
+            window.alert(err.message);
+        } else {
+            window.alert("Oops! Something went wrong.");
+        }
+    }
+}
+
+const sameBrowser = await isThisSameBrowserAndDevice();
+
+if (sameBrowser) {
+  handleMagicLinkClicked();
+}
+
+</script>
+	<body>
+		<h1>Email Verification</h1>
+    <p>Verifying and authenticating your email ...</p>
+	</body>
+</html>
