@@ -17,6 +17,7 @@
     "paths": {
       "@uptownhr/auth-module": ["libs/auth-module/src/index.ts"],
       "@uptownhr/backend-module": ["apps/backend/src/app/backend.module.ts"],
+      "@uptownhr/survey": ["libs/survey/src/index.ts"]
     },
     "strictNullChecks": true
   },
