@@ -6,5 +6,12 @@ This is a monorepo with NX for with the following projects
 1. `yarn`
 2. `yarn nx dev website`
 
+## Starting Backend Development
+1. `yarn`
+2. `yarn backend`
+
 ## NX Cheat Sheat
 - Create a new astro app `yarn nx g @nxtensions/astro:app {name}`
+
+## Todo
+- [ ] Deployment pipeline 
