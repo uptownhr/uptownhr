@@ -1,6 +1,12 @@
-import { Module } from '@nestjs/common';
+import { ConfigurableModuleBuilder, Module } from '@nestjs/common';
 import { LovDb } from './lov-db';
-import { ConfigurableModuleClass } from './lov-db.module-definition';
+
+export interface LovDbModuleConfig {
+  databaseURL: string;
+}
+
+export const { ConfigurableModuleClass, MODULE_OPTIONS_TOKEN } =
+  new ConfigurableModuleBuilder<LovDbModuleConfig>().build();
 
 @Module({
   controllers: [],
