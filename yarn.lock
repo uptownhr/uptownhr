@@ -5,6 +5,22 @@ __metadata:
   version: 6
   cacheKey: 8
 
+"@actions/exec@npm:1.1.1":
+  version: 1.1.1
+  resolution: "@actions/exec@npm:1.1.1"
+  dependencies:
+    "@actions/io": ^1.0.1
+  checksum: d976e66dd51ab03d76a143da8e1406daa1bcdee06046168e6e0bec681c87a12999eefaad7a81cb81f28e4190610f55a58b8458ae4b82cbaaba13200490f4e8c2
+  languageName: node
+  linkType: hard
+
+"@actions/io@npm:^1.0.1":
+  version: 1.1.3
+  resolution: "@actions/io@npm:1.1.3"
+  checksum: 42841ac2b8a7afb29456b9edb5534dbe00148893c794bdbc17d29166847c51c884e2a7c087a489a428250a78e7b54bc761ba3b55eb2f97d9600e9193b60caf0b
+  languageName: node
+  linkType: hard
+
 "@ampproject/remapping@npm:^2.1.0":
   version: 2.2.0
   resolution: "@ampproject/remapping@npm:2.2.0"
@@ -2518,6 +2534,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nrwl/devkit@npm:16.7.0":
+  version: 16.7.0
+  resolution: "@nrwl/devkit@npm:16.7.0"
+  dependencies:
+    "@nx/devkit": 16.7.0
+  checksum: 62da03edb34326b7e0210ef49d2422a1d7dadd286875e1f5e84a65bf0165f21b96dde1ea6a1bf45af26c7741faad418366a1ba62a7463a48252987727dd0ce8f
+  languageName: node
+  linkType: hard
+
 "@nrwl/eslint-plugin-nx@npm:^15.6.3":
   version: 15.6.3
   resolution: "@nrwl/eslint-plugin-nx@npm:15.6.3"
@@ -2746,6 +2771,55 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nx-tools/core@npm:5.0.2":
+  version: 5.0.2
+  resolution: "@nx-tools/core@npm:5.0.2"
+  dependencies:
+    "@actions/exec": 1.1.1
+    chalk: 4.1.2
+    ci-info: 3.8.0
+  peerDependencies:
+    "@nx/devkit": ^16.0.0
+    tslib: 2.5.3
+  checksum: f68382e4b37f4ef2a9ebcd6b0b0c372e9637fc3aba5ccbeb72014a1c821fe780aa84ee34c922ef1386fbd0ea5d3db74932094539a262a7e9db03364032065a5e
+  languageName: node
+  linkType: hard
+
+"@nx-tools/nx-prisma@npm:^5.0.2":
+  version: 5.0.2
+  resolution: "@nx-tools/nx-prisma@npm:5.0.2"
+  dependencies:
+    "@actions/exec": 1.1.1
+    "@nx-tools/core": 5.0.2
+    chalk: 4.1.2
+    ci-info: 3.8.0
+    semver: 7.5.1
+    tslib: 2.5.3
+  peerDependencies:
+    "@nx/devkit": ^16.0.0
+    prisma: ^4.5.0
+    ts-node: "*"
+  checksum: d66a63a507a0bf05d88a32826ab5556a5fb8660362f0fea4630162c9b4c16d25c1cd0b56961489e57cb9cf43459c8dbd409680bc61152794eef34d3062d93634
+  languageName: node
+  linkType: hard
+
+"@nx/devkit@npm:16.7.0, @nx/devkit@npm:^16.7.0":
+  version: 16.7.0
+  resolution: "@nx/devkit@npm:16.7.0"
+  dependencies:
+    "@nrwl/devkit": 16.7.0
+    ejs: ^3.1.7
+    enquirer: ~2.3.6
+    ignore: ^5.0.4
+    semver: 7.5.3
+    tmp: ~0.2.1
+    tslib: ^2.3.0
+  peerDependencies:
+    nx: ">= 15 <= 17"
+  checksum: b715c4ca3f5807e63d108d3ae741e6d18a56c4cb9b54886fe979a8ceab287b5dec0d0150748ba8716ebbd8604e377cf0e76e690bab4bc52afdf4715559ddc410
+  languageName: node
+  linkType: hard
+
 "@nxtensions/astro@npm:^3.3.0":
   version: 3.3.0
   resolution: "@nxtensions/astro@npm:3.3.0"
@@ -2840,6 +2914,13 @@ __metadata:
   version: 5.1.1-1.6a3747c37ff169c90047725a05a6ef02e32ac97e
   resolution: "@prisma/engines-version@npm:5.1.1-1.6a3747c37ff169c90047725a05a6ef02e32ac97e"
   checksum: cfea78fe98cff694eea31335c4167f375cdd8a848d6699bd0035d4a9c05184bf6fe57959249220c098c6214a424c9519f7cd17c51119234866840bd1030c87e1
+  languageName: node
+  linkType: hard
+
+"@prisma/engines@npm:5.1.1":
+  version: 5.1.1
+  resolution: "@prisma/engines@npm:5.1.1"
+  checksum: 561c85def110279eb7c764e7c1ea1f8f54d9a2948ed5e5db9b11321c2bef362d178b756e39e7e022ee27cb2be5ac8d9b835967ce341ad8f6a1e8502f988140ee
   languageName: node
   linkType: hard
 
@@ -4915,6 +4996,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chalk@npm:4.1.2, chalk@npm:^4.0.0, chalk@npm:^4.0.2, chalk@npm:^4.1.0, chalk@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "chalk@npm:4.1.2"
+  dependencies:
+    ansi-styles: ^4.1.0
+    supports-color: ^7.1.0
+  checksum: fe75c9d5c76a7a98d45495b91b2172fa3b7a09e0cc9370e5c8feb1c567b85c4288e2b3fded7cfdd7359ac28d6b3844feb8b82b8686842e93d23c827c417e83fc
+  languageName: node
+  linkType: hard
+
 "chalk@npm:^2.0.0":
   version: 2.4.2
   resolution: "chalk@npm:2.4.2"
@@ -4923,16 +5014,6 @@ __metadata:
     escape-string-regexp: ^1.0.5
     supports-color: ^5.3.0
   checksum: ec3661d38fe77f681200f878edbd9448821924e0f93a9cefc0e26a33b145f1027a2084bf19967160d11e1f03bfe4eaffcabf5493b89098b2782c3fe0b03d80c2
-  languageName: node
-  linkType: hard
-
-"chalk@npm:^4.0.0, chalk@npm:^4.0.2, chalk@npm:^4.1.0, chalk@npm:^4.1.2":
-  version: 4.1.2
-  resolution: "chalk@npm:4.1.2"
-  dependencies:
-    ansi-styles: ^4.1.0
-    supports-color: ^7.1.0
-  checksum: fe75c9d5c76a7a98d45495b91b2172fa3b7a09e0cc9370e5c8feb1c567b85c4288e2b3fded7cfdd7359ac28d6b3844feb8b82b8686842e93d23c827c417e83fc
   languageName: node
   linkType: hard
 
@@ -5015,6 +5096,13 @@ __metadata:
   version: 1.0.3
   resolution: "chrome-trace-event@npm:1.0.3"
   checksum: cb8b1fc7e881aaef973bd0c4a43cd353c2ad8323fb471a041e64f7c2dd849cde4aad15f8b753331a32dda45c973f032c8a03b8177fc85d60eaa75e91e08bfb97
+  languageName: node
+  linkType: hard
+
+"ci-info@npm:3.8.0":
+  version: 3.8.0
+  resolution: "ci-info@npm:3.8.0"
+  checksum: d0a4d3160497cae54294974a7246202244fff031b0a6ea20dd57b10ec510aa17399c41a1b0982142c105f3255aff2173e5c0dd7302ee1b2f28ba3debda375098
   languageName: node
   linkType: hard
 
@@ -12032,6 +12120,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prisma@npm:^5.1.1":
+  version: 5.1.1
+  resolution: "prisma@npm:5.1.1"
+  dependencies:
+    "@prisma/engines": 5.1.1
+  bin:
+    prisma: build/index.js
+  checksum: ab0879fdff3a5e3f50956e18308bd996708519824802b2528c80d1639bbb4d8dd499ef17670db27986695811a9e28b2c9d5ab0753031441ee12878b30bace8b7
+  languageName: node
+  linkType: hard
+
 "prismjs@npm:^1.28.0":
   version: 1.29.0
   resolution: "prismjs@npm:1.29.0"
@@ -12888,6 +12987,28 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: 96451bfd7cba9b60ee87571959dc47e87c95b2fe58a9312a926340fee9907fc7bc062c352efdaf5bb24b2dff59c145e14faf7eb9d718a84b4751312531b39f43
+  languageName: node
+  linkType: hard
+
+"semver@npm:7.5.1":
+  version: 7.5.1
+  resolution: "semver@npm:7.5.1"
+  dependencies:
+    lru-cache: ^6.0.0
+  bin:
+    semver: bin/semver.js
+  checksum: d16dbedad53c65b086f79524b9ef766bf38670b2395bdad5c957f824dcc566b624988013564f4812bcace3f9d405355c3635e2007396a39d1bffc71cfec4a2fc
+  languageName: node
+  linkType: hard
+
+"semver@npm:7.5.3":
+  version: 7.5.3
+  resolution: "semver@npm:7.5.3"
+  dependencies:
+    lru-cache: ^6.0.0
+  bin:
+    semver: bin/semver.js
+  checksum: 9d58db16525e9f749ad0a696a1f27deabaa51f66e91d2fa2b0db3de3e9644e8677de3b7d7a03f4c15bc81521e0c3916d7369e0572dbde250d9bedf5194e2a8a7
   languageName: node
   linkType: hard
 
@@ -14061,6 +14182,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tslib@npm:2.5.3":
+  version: 2.5.3
+  resolution: "tslib@npm:2.5.3"
+  checksum: 88902b309afaf83259131c1e13da1dceb0ad1682a213143a1346a649143924d78cf3760c448b84d796938fd76127183894f8d85cbb3bf9c4fddbfcc140c0003c
+  languageName: node
+  linkType: hard
+
 "tslib@npm:^1.10.0, tslib@npm:^1.8.1, tslib@npm:^1.9.0":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
@@ -14463,6 +14591,8 @@ __metadata:
     "@nrwl/node": 15.6.3
     "@nrwl/webpack": 15.6.3
     "@nrwl/workspace": ^15.6.3
+    "@nx-tools/nx-prisma": ^5.0.2
+    "@nx/devkit": ^16.7.0
     "@nxtensions/astro": ^3.3.0
     "@prisma/client": ^5.1.1
     "@types/jest": 28.1.1
@@ -14483,6 +14613,7 @@ __metadata:
     posthog-js: ^1.42.2
     prettier: ^2.8.3
     prettier-plugin-svelte: ^2.9.0
+    prisma: ^5.1.1
     reflect-metadata: ^0.1.13
     rxjs: ^7.0.0
     store: ^2.0.12
