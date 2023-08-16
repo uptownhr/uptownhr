@@ -21,6 +21,7 @@
     "@nestjs/config": "^2.2.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/platform-express": "^9.0.0",
+    "@prisma/client": "^5.1.1",
     "axios": "^1.0.0",
     "posthog-js": "^1.42.2",
     "reflect-metadata": "^0.1.13",

@@ -17,6 +17,8 @@
     "paths": {
       "@uptownhr/auth-module": ["libs/auth-module/src/index.ts"],
       "@uptownhr/backend-module": ["apps/backend/src/app/backend.module.ts"],
+      "@uptownhr/lov-db": ["libs/lov-db/src/index.ts"],
+      "@uptownhr/lov-schema": ["libs/lov-schema/src/index.ts"]
     },
     "strictNullChecks": true
   },
