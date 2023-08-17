@@ -41,4 +41,4 @@ import { LovDbModule } from '@uptownhr/lov-db';
   controllers: [AppController],
   providers: [AppService],
 })
-export class BackendModule {}
+export class AppModule {}
