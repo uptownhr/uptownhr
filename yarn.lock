@@ -2771,35 +2771,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nx-tools/core@npm:5.0.2":
-  version: 5.0.2
-  resolution: "@nx-tools/core@npm:5.0.2"
+"@nx-tools/core@npm:5.0.3":
+  version: 5.0.3
+  resolution: "@nx-tools/core@npm:5.0.3"
   dependencies:
     "@actions/exec": 1.1.1
     chalk: 4.1.2
     ci-info: 3.8.0
   peerDependencies:
     "@nx/devkit": ^16.0.0
-    tslib: 2.5.3
-  checksum: f68382e4b37f4ef2a9ebcd6b0b0c372e9637fc3aba5ccbeb72014a1c821fe780aa84ee34c922ef1386fbd0ea5d3db74932094539a262a7e9db03364032065a5e
+    tslib: ^2.5.3
+  checksum: a2cd8d7ce00b31fbc1c08ea5c10bc0a32f689254b812700895a6394cea0417e67fbd84a1741dc48023fb590acc8590e29e65492530bb80a44c9769d210a3ca19
   languageName: node
   linkType: hard
 
 "@nx-tools/nx-prisma@npm:^5.0.2":
-  version: 5.0.2
-  resolution: "@nx-tools/nx-prisma@npm:5.0.2"
+  version: 5.0.3
+  resolution: "@nx-tools/nx-prisma@npm:5.0.3"
   dependencies:
-    "@actions/exec": 1.1.1
-    "@nx-tools/core": 5.0.2
-    chalk: 4.1.2
-    ci-info: 3.8.0
-    semver: 7.5.1
-    tslib: 2.5.3
+    "@nx-tools/core": 5.0.3
+    semver: 7.5.4
   peerDependencies:
     "@nx/devkit": ^16.0.0
-    prisma: ^4.5.0
+    "@nx/workspace": ^16.0.0
+    prisma: ^4.5.0 || ^5.0.0
     ts-node: "*"
-  checksum: d66a63a507a0bf05d88a32826ab5556a5fb8660362f0fea4630162c9b4c16d25c1cd0b56961489e57cb9cf43459c8dbd409680bc61152794eef34d3062d93634
+    tslib: ^2.5.3
+  checksum: fd17b287c76b141b9d579cad30f071891b985fc7ee1a59ea0bbbeca67511186300070dde5088fce1295b08f0b253acbfdf665fd927cc67d56d53ccf9abe6f0fc
   languageName: node
   linkType: hard
 
@@ -12934,17 +12932,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:7.5.1":
-  version: 7.5.1
-  resolution: "semver@npm:7.5.1"
-  dependencies:
-    lru-cache: ^6.0.0
-  bin:
-    semver: bin/semver.js
-  checksum: d16dbedad53c65b086f79524b9ef766bf38670b2395bdad5c957f824dcc566b624988013564f4812bcace3f9d405355c3635e2007396a39d1bffc71cfec4a2fc
-  languageName: node
-  linkType: hard
-
 "semver@npm:7.5.3":
   version: 7.5.3
   resolution: "semver@npm:7.5.3"
@@ -12953,6 +12940,17 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: 9d58db16525e9f749ad0a696a1f27deabaa51f66e91d2fa2b0db3de3e9644e8677de3b7d7a03f4c15bc81521e0c3916d7369e0572dbde250d9bedf5194e2a8a7
+  languageName: node
+  linkType: hard
+
+"semver@npm:7.5.4":
+  version: 7.5.4
+  resolution: "semver@npm:7.5.4"
+  dependencies:
+    lru-cache: ^6.0.0
+  bin:
+    semver: bin/semver.js
+  checksum: 12d8ad952fa353b0995bf180cdac205a4068b759a140e5d3c608317098b3575ac2f1e09182206bf2eb26120e1c0ed8fb92c48c592f6099680de56bb071423ca3
   languageName: node
   linkType: hard
 
@@ -14123,13 +14121,6 @@ __metadata:
   version: 2.4.1
   resolution: "tslib@npm:2.4.1"
   checksum: 19480d6e0313292bd6505d4efe096a6b31c70e21cf08b5febf4da62e95c265c8f571f7b36fcc3d1a17e068032f59c269fab3459d6cd3ed6949eafecf64315fca
-  languageName: node
-  linkType: hard
-
-"tslib@npm:2.5.3":
-  version: 2.5.3
-  resolution: "tslib@npm:2.5.3"
-  checksum: 88902b309afaf83259131c1e13da1dceb0ad1682a213143a1346a649143924d78cf3760c448b84d796938fd76127183894f8d85cbb3bf9c4fddbfcc140c0003c
   languageName: node
   linkType: hard
 
