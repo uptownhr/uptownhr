@@ -10,8 +10,37 @@ datasource db {
 
 model Page {
   id        Int      @id @default(autoincrement())
+
   slug      String   @unique
   title     String
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  questions Question[]
+}
+
+model Question {
+  id        Int      @id @default(autoincrement())
+  pageId    Int
+
+  title     String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  page      Page     @relation(fields: [pageId], references: [id])
+  answers   Answer[]
+}
+
+model Answer {
+  id        Int      @id @default(autoincrement())
+  questionId Int
+
+  value     String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  question  Question @relation(fields: [questionId], references: [id])
 }
