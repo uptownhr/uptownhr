@@ -1,9 +1,16 @@
-import { Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
 
 import { AppService } from './app.service';
 import { AuthGuard } from '@uptownhr/auth-module';
 import { LovDb } from '@uptownhr/lov-db';
-import { CreatePageInput, Page } from './app.model';
+import {
+  AddAnswerInput,
+  AddQuestionInput,
+  Answer,
+  CreatePageInput,
+  Page,
+  Question,
+} from './app.model';
 import { ApiResponse } from '@nestjs/swagger';
 
 @Controller()
@@ -43,5 +50,63 @@ export class AppController {
     const pages = await this.lovDb.page.findMany();
 
     return pages;
+  }
+
+  @ApiResponse({ type: Question, status: 201 })
+  @Post('question')
+  async addQuestion(@Body() input: AddQuestionInput): Promise<Question> {
+    const question = await this.lovDb.question.create({
+      data: {
+        title: input.title,
+        page: {
+          connect: {
+            id: input.pageId,
+          },
+        },
+      },
+    });
+
+    return question;
+  }
+
+  @ApiResponse({ type: Question, status: 200, isArray: true })
+  @Get('page/:id/questions')
+  async getPageQuestions(@Param('id') pageId: number): Promise<Question[]> {
+    const questions = await this.lovDb.question.findMany({
+      where: {
+        pageId,
+      },
+    });
+
+    return questions;
+  }
+
+  @ApiResponse({ type: Answer, status: 201 })
+  @Post('answer')
+  async addAnswer(@Body() input: AddAnswerInput): Promise<Answer> {
+    const answer = await this.lovDb.answer.create({
+      data: {
+        value: input.value,
+        question: {
+          connect: {
+            id: input.questionId,
+          },
+        },
+      },
+    });
+
+    return answer;
+  }
+
+  @ApiResponse({ type: Answer, status: 200, isArray: true })
+  @Get('question/:id/answers')
+  async getQuestionAnswers(@Param('id') questionId: number): Promise<Answer[]> {
+    const answers = await this.lovDb.answer.findMany({
+      where: {
+        questionId,
+      },
+    });
+
+    return answers;
   }
 }
