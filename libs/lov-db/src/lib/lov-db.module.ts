@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { LovDb } from './lov-db';
-import { ConfigurableModuleClass } from './lov-db.configurable';
+import { ConfigurableModuleClass } from './lov-db.module-definition';
 
 @Module({
   controllers: [],

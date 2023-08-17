@@ -1,6 +1,9 @@
 import { Inject, Injectable, OnModuleInit } from '@nestjs/common';
 import { PrismaClient } from '../generated/client';
-import { LovDbModuleConfig, MODULE_OPTIONS_TOKEN } from './lov-db.configurable';
+import {
+  LovDbModuleConfig,
+  MODULE_OPTIONS_TOKEN,
+} from './lov-db.module-definition';
 
 console.log('token', MODULE_OPTIONS_TOKEN);
 
