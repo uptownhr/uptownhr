@@ -1,5 +1,6 @@
 export interface Configuration {
   port: number;
+  databaseURL: string | undefined;
   supertokens: {
     connectionURI: string | undefined;
     apiKey: string | undefined;
@@ -13,7 +14,7 @@ export interface Configuration {
 
 export default (): Configuration => ({
   port: process.env.PORT ? parseInt(process.env.PORT, 10) : 3001,
-
+  databaseURL: process.env.DATABASE_URL,
   supertokens: {
     connectionURI: process.env.SUPERTOKENS_CONNECTION_URI,
     apiKey: process.env.SUPERTOKENS_API_KEY,

@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { AuthModule } from '@uptownhr/auth-module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import configuration, { Configuration } from '../configuration/configuration';
+import { LovDbModule } from '@uptownhr/lov-db';
 
 @Module({
   imports: [
@@ -24,6 +25,14 @@ import configuration, { Configuration } from '../configuration/configuration';
           websiteDomain: supertokens.websiteDomain!,
           apiBasePath: supertokens.apiBasePath!,
           websiteBasePath: supertokens.websiteBasePath!,
+        };
+      },
+      inject: [ConfigService],
+    }),
+    LovDbModule.registerAsync({
+      useFactory: (config: ConfigService<Configuration, true>) => {
+        return {
+          databaseURL: config.get('databaseURL', { infer: true }),
         };
       },
       inject: [ConfigService],
