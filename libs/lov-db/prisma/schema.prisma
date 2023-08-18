@@ -9,10 +9,10 @@ datasource db {
 }
 
 model Page {
-  id        Int      @id @default(autoincrement())
+  id Int @id @default(autoincrement())
 
-  slug      String   @unique
-  title     String
+  slug  String @unique
+  title String
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -21,26 +21,49 @@ model Page {
 }
 
 model Question {
-  id        Int      @id @default(autoincrement())
-  pageId    Int
+  id     Int @id @default(autoincrement())
+  pageId Int
 
-  title     String
+  title String
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  page      Page     @relation(fields: [pageId], references: [id])
-  answers   Answer[]
+  page         Page           @relation(fields: [pageId], references: [id])
+  answers      Answer[]
+  QuestionVote QuestionVote[]
+}
+
+model QuestionVote {
+  id Int @id @default(autoincrement())
+
+  questionId Int
+
+  createdAt DateTime @default(now())
+
+  question Question @relation(fields: [questionId], references: [id])
 }
 
 model Answer {
-  id        Int      @id @default(autoincrement())
+  id         Int @id @default(autoincrement())
   questionId Int
 
-  value     String
+  value String
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  question  Question @relation(fields: [questionId], references: [id])
+  question Question     @relation(fields: [questionId], references: [id])
+  votes    AnswerVote[]
+}
+
+model AnswerVote {
+  id Int @id @default(autoincrement())
+
+  answerId Int
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  answer Answer @relation(fields: [answerId], references: [id])
 }
