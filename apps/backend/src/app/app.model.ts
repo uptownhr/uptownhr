@@ -35,6 +35,12 @@ export class Question {
 
   @ApiProperty()
   title: string;
+
+  @ApiProperty()
+  answerCount: number;
+
+  @ApiProperty()
+  voteCount: number;
 }
 
 export class AddAnswerInput {
@@ -51,4 +57,7 @@ export class Answer {
 
   @ApiProperty()
   value: string;
+
+  @ApiProperty()
+  voteCount: number;
 }

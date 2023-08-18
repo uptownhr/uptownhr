@@ -66,7 +66,11 @@ export class AppController {
       },
     });
 
-    return question;
+    return {
+      ...question,
+      answerCount: 0,
+      voteCount: 0,
+    };
   }
 
   @ApiResponse({ type: Question, status: 200, isArray: true })
@@ -78,7 +82,7 @@ export class AppController {
       },
     });
 
-    return questions;
+    return questions.map((q) => ({ ...q, voteCount: 0, answerCount: 0 }));
   }
 
   @ApiResponse({ type: Answer, status: 201 })
@@ -95,7 +99,10 @@ export class AppController {
       },
     });
 
-    return answer;
+    return {
+      ...answer,
+      voteCount: 0,
+    };
   }
 
   @ApiResponse({ type: Answer, status: 200, isArray: true })
@@ -107,6 +114,6 @@ export class AppController {
       },
     });
 
-    return answers;
+    return answers.map((a) => ({ ...a, voteCount: 0 }));
   }
 }
