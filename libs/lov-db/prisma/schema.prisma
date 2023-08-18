@@ -29,9 +29,9 @@ model Question {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  page         Page           @relation(fields: [pageId], references: [id])
-  answers      Answer[]
-  QuestionVote QuestionVote[]
+  page    Page           @relation(fields: [pageId], references: [id])
+  answers Answer[]
+  votes   QuestionVote[]
 }
 
 model QuestionVote {

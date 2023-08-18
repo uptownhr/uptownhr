@@ -80,9 +80,28 @@ export class AppController {
       where: {
         pageId,
       },
+      select: {
+        id: true,
+        title: true,
+        votes: {
+          select: {
+            id: true,
+          },
+        },
+
+        answers: {
+          select: {
+            id: true,
+          },
+        },
+      },
     });
 
-    return questions.map((q) => ({ ...q, voteCount: 0, answerCount: 0 }));
+    return questions.map((q) => ({
+      ...q,
+      voteCount: q.votes.length,
+      answerCount: q.answers.length,
+    }));
   }
 
   @ApiResponse({ type: Answer, status: 201 })
@@ -112,8 +131,12 @@ export class AppController {
       where: {
         questionId,
       },
+
+      include: {
+        votes: true,
+      },
     });
 
-    return answers.map((a) => ({ ...a, voteCount: 0 }));
+    return answers.map((a) => ({ ...a, voteCount: a.votes.length }));
   }
 }
