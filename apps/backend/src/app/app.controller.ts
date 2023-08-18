@@ -151,4 +151,59 @@ export class AppController {
 
     return answers.map((a) => ({ ...a, voteCount: a.votes.length }));
   }
+
+  @ApiResponse({ type: Question, status: 200 })
+  @Post('question/:id/vote')
+  async questionVote(@Param('id') id: number): Promise<Question> {
+    console.log('id', id);
+    const vote = await this.lovDb.questionVote.create({
+      data: {
+        question: {
+          connect: {
+            id,
+          },
+        },
+      },
+      include: {
+        question: {
+          include: {
+            votes: true,
+            answers: true,
+          },
+        },
+      },
+    });
+
+    return {
+      ...vote.question,
+      voteCount: vote.question.votes.length,
+      answerCount: vote.question.answers.length,
+    };
+  }
+
+  @ApiResponse({ type: Answer, status: 200 })
+  @Post('answer/:id/vote')
+  async answerVote(@Param('id') id: number): Promise<Answer> {
+    const vote = await this.lovDb.answerVote.create({
+      data: {
+        answer: {
+          connect: {
+            id,
+          },
+        },
+      },
+      include: {
+        answer: {
+          include: {
+            votes: true,
+          },
+        },
+      },
+    });
+
+    return {
+      ...vote.answer,
+      voteCount: vote.answer.votes.length,
+    };
+  }
 }
