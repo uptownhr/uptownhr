@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  ParseIntPipe,
+  Post,
+  UseGuards,
+} from '@nestjs/common';
 
 import { AppService } from './app.service';
 import { AuthGuard } from '@uptownhr/auth-module';
@@ -75,7 +83,9 @@ export class AppController {
 
   @ApiResponse({ type: Question, status: 200, isArray: true })
   @Get('page/:id/questions')
-  async getPageQuestions(@Param('id') pageId: number): Promise<Question[]> {
+  async getPageQuestions(
+    @Param('id', ParseIntPipe) pageId: number
+  ): Promise<Question[]> {
     const questions = await this.lovDb.question.findMany({
       where: {
         pageId,
@@ -126,7 +136,9 @@ export class AppController {
 
   @ApiResponse({ type: Answer, status: 200, isArray: true })
   @Get('question/:id/answers')
-  async getQuestionAnswers(@Param('id') questionId: number): Promise<Answer[]> {
+  async getQuestionAnswers(
+    @Param('id', ParseIntPipe) questionId: number
+  ): Promise<Answer[]> {
     const answers = await this.lovDb.answer.findMany({
       where: {
         questionId,

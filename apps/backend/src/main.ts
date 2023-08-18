@@ -3,7 +3,7 @@
  * This is only a minimal backend to get started.
  */
 
-import { Logger } from '@nestjs/common';
+import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import supertokens from 'supertokens-node';
 
@@ -29,6 +29,13 @@ async function bootstrap() {
   });
 
   app.useGlobalFilters(new SupertokensExceptionFilter());
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true,
+      forbidNonWhitelisted: true,
+      transform: true,
+    })
+  );
 
   const config = new DocumentBuilder()
     .setTitle('Questions and Answers')
