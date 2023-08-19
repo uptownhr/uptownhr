@@ -1,0 +1,70 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/client"
+  binaryTargets = ["native", "linux-musl", "linux-arm64-openssl-1.1.x", "debian-openssl-3.0.x", "darwin-arm64"]
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Page {
+  id Int @id @default(autoincrement())
+
+  slug  String @unique
+  title String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  questions Question[]
+}
+
+model Question {
+  id     Int @id @default(autoincrement())
+  pageId Int
+
+  title String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  page    Page           @relation(fields: [pageId], references: [id])
+  answers Answer[]
+  votes   QuestionVote[]
+}
+
+model QuestionVote {
+  id Int @id @default(autoincrement())
+
+  questionId Int
+
+  createdAt DateTime @default(now())
+
+  question Question @relation(fields: [questionId], references: [id])
+}
+
+model Answer {
+  id         Int @id @default(autoincrement())
+  questionId Int
+
+  value String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  question Question     @relation(fields: [questionId], references: [id])
+  votes    AnswerVote[]
+}
+
+model AnswerVote {
+  id Int @id @default(autoincrement())
+
+  answerId Int
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  answer Answer @relation(fields: [answerId], references: [id])
+}

@@ -36,6 +36,7 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "latest",
     "@nestjs/schematics": "^9.0.0",
     "@nestjs/swagger": "^7.1.8",
     "@nestjs/testing": "^9.0.0",
