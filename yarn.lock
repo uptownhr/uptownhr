@@ -3729,6 +3729,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vercel/ncc@npm:^0.36.1":
+  version: 0.36.1
+  resolution: "@vercel/ncc@npm:0.36.1"
+  dependencies:
+    node-gyp: latest
+  bin:
+    ncc: dist/ncc/cli.js
+  checksum: dcb8db089b07a8fad64c24eef25be6bc2db7ba30582a03236e3a6d332c8653d93a45aba7fe0e01b6d64f3c5b54d23467539ac3664c113f54a9e59341ded79bf9
+  languageName: node
+  linkType: hard
+
 "@vscode/emmet-helper@npm:^2.8.4":
   version: 2.8.6
   resolution: "@vscode/emmet-helper@npm:2.8.6"
@@ -14690,6 +14701,7 @@ __metadata:
     "@types/uuid": ^9.0.0
     "@typescript-eslint/eslint-plugin": ^5.49.0
     "@typescript-eslint/parser": ^5.49.0
+    "@vercel/ncc": ^0.36.1
     astro: ^2.0.0
     axios: ^1.0.0
     class-transformer: ^0.5.1

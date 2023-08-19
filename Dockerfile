@@ -33,27 +33,34 @@ RUN yarn install
 # Copy application code
 COPY --link . .
 
-# RUN yarn install
-
-# Generate Prisma Client
-# RUN yarn nx run lov-db:prisma-generate
-RUN ls -la ./libs/lov-db/src/generated/client
-
-
 # Build application
 RUN yarn nx run backend:build:production
+RUN yarn ncc build dist/apps/backend/main.js
+RUN ls -la ./dist/apps/backend
+RUN ls -la ./dist
 
 # Final stage for app image
 FROM base
 
 # Install packages needed for deployment
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y openssl && \
+    apt-get install --no-install-recommends -y openssl ca-certificates fuse3 sqlite3 && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
+# COPY LITEFS
+COPY --from=flyio/litefs:0.5 /usr/local/bin/litefs /usr/local/bin/litefs
+
 # Copy built application
-COPY --from=build /app /app
+COPY --from=build /app/dist/index.js /app/index.js
+COPY --from=build /app/dev.env /app/.env
+COPY --from=build /app/libs/lov-db/prisma /app/prisma
+COPY --from=build /app/libs/lov-db/prisma/schema.prisma /app/schema.prisma
+
+COPY --from=build /app/libs/lov-db/src/generated/client/libquery_engine-debian-openssl-3.0.x.so.node /app/libquery_engine-debian-openssl-3.0.x.so.node
+COPY --from=build /app/litefs.yml /app/litefs.yml
+
+RUN yarn add prisma
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-CMD [ "yarn", "run", "start" ]
+CMD [ "node", "index.js" ]
