@@ -29,13 +29,13 @@ async function bootstrap() {
   });
 
   app.useGlobalFilters(new SupertokensExceptionFilter());
-  app.useGlobalPipes(
+  /*app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
       forbidNonWhitelisted: true,
       transform: true,
     })
-  );
+  );*/
 
   const config = new DocumentBuilder()
     .setTitle('Questions and Answers')
