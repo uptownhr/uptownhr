@@ -18,7 +18,7 @@ primary_region = "lax"
 
 [mounts]
   source = "litefs"
-  destination = "/var/lib/litefs"
+  destination = "/db"
 
 [env]
-  DATABASE_URL = "file:/var/lib/litefs/dbs/lov.db"
+  DATABASE_URL = "file:/db/lov.db"

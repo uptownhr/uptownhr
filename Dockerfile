@@ -53,7 +53,7 @@ COPY --from=flyio/litefs:0.5 /usr/local/bin/litefs /usr/local/bin/litefs
 # Copy built application
 COPY --from=build /app/dist/index.js /app/index.js
 COPY --from=build /app/dev.env /app/.env
-COPY --from=build /app/libs/lov-db/prisma /app/prisma
+COPY --from=build /app/libs/lov-db/prisma/migrations /app/migrations
 COPY --from=build /app/libs/lov-db/prisma/schema.prisma /app/schema.prisma
 
 COPY --from=build /app/libs/lov-db/src/generated/client/libquery_engine-debian-openssl-3.0.x.so.node /app/libquery_engine-debian-openssl-3.0.x.so.node
@@ -63,4 +63,4 @@ RUN yarn add prisma
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-CMD [ "node", "index.js" ]
+CMD ["sh", "-c", "yarn prisma migrate deploy && node index.js"]
