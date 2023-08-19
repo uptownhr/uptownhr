@@ -69,10 +69,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/compiler@npm:^1.0.1, @astrojs/compiler@npm:~1.0.1":
+"@astrojs/compiler@npm:^1.0.1":
   version: 1.0.1
   resolution: "@astrojs/compiler@npm:1.0.1"
   checksum: 1ccbe6258c03e74020e15ff654425a1d4fa97ec9763f357b9007bceffece6935c1fe2fd3e385550ede995e411be0b02140208eebd12f30a54ae6898d0f315182
+  languageName: node
+  linkType: hard
+
+"@astrojs/compiler@npm:^1.2.1":
+  version: 1.3.0
+  resolution: "@astrojs/compiler@npm:1.3.0"
+  checksum: d2eb523499289c567d2197b4d6b3106cab3449627dfd0017652cbf3829c73684bd5db8a2c011a3a96f058be3fdfbed2a46d23b6f04aece62b77808f6ee752e06
   languageName: node
   linkType: hard
 
@@ -2878,10 +2885,10 @@ __metadata:
   linkType: hard
 
 "@nxtensions/astro@npm:^3.3.0":
-  version: 3.3.0
-  resolution: "@nxtensions/astro@npm:3.3.0"
+  version: 3.5.0
+  resolution: "@nxtensions/astro@npm:3.5.0"
   dependencies:
-    "@astrojs/compiler": ~1.0.1
+    "@astrojs/compiler": ^1.2.1
     "@phenomnomnominal/tsquery": ~5.0.0
     fs-extra: ^11.1.0
     node-fetch: ~2.6.7
@@ -2890,12 +2897,13 @@ __metadata:
   peerDependencies:
     "@nrwl/cypress": ^14.1.0 || ^15.0.0
     "@nrwl/devkit": ^14.1.0 || ^15.0.0
+    "@nrwl/js": ^14.1.0 || ^15.0.0
     "@nrwl/linter": ^14.1.0 || ^15.0.0
     "@nrwl/workspace": ^14.1.0 || ^15.0.0
     astro: ^1.6.0 || ^2.0.0
     nx: ^14.1.0 || ^15.0.0
     typescript: ^4.3.5
-  checksum: 9619446f0a8cbe924f40b4bfa2286d6e563001a81aebc4b157541f8d888b34709acaa1b16b51b86a12bfa453207c1b72628855166704713b8fcc68c1b2fd0696
+  checksum: 3026f11b4b67aa8593053a549247b480852a26bf15ebc3f23f10869ec6b8cb1ba8a9c0a33ad40b941abf7489a9b9a99a13efec8d60ef02f8cdc7e0de454aa0ee
   languageName: node
   linkType: hard
 
