@@ -59,7 +59,7 @@ COPY --from=build /app/libs/lov-db/prisma/schema.prisma /app/schema.prisma
 COPY --from=build /app/libs/lov-db/src/generated/client/libquery_engine-debian-openssl-3.0.x.so.node /app/libquery_engine-debian-openssl-3.0.x.so.node
 COPY --from=build /app/litefs.yml /app/litefs.yml
 
-RUN yarn add prisma
+RUN yarn add prisma@^5
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
