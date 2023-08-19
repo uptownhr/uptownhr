@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/uptownhr/uptownhr/compare/v1.1.0...v1.2.0) (2023-08-19)
+
+
+### Features
+
+* new token ([09c9237](https://github.com/uptownhr/uptownhr/commit/09c9237c214768e3c0d2db03b812e600bba4e64d))
+
 ## [1.1.0](https://github.com/uptownhr/uptownhr/compare/v1.0.0...v1.1.0) (2023-08-19)
 
 
