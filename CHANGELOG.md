@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/uptownhr/uptownhr/compare/v1.2.0...v1.3.0) (2023-08-20)
+
+
+### Features
+
+* added questions to frontend ([ac2b0d3](https://github.com/uptownhr/uptownhr/commit/ac2b0d31f381bf25f64ecb154a67b3658b0a0023))
+
 ## [1.2.0](https://github.com/uptownhr/uptownhr/compare/v1.1.0...v1.2.0) (2023-08-19)
 
 
