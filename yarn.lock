@@ -3411,10 +3411,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:18.7.1":
-  version: 18.7.1
-  resolution: "@types/node@npm:18.7.1"
-  checksum: f1e2b701b107f97be01da4c46845cd23bcdcb2865f9abbb2847546d09587e726ea207daca6f0d1e72196875ef8c62feeeff5f1c1f2070445acd6d1a61d815c7c
+"@types/node@npm:18.17.6":
+  version: 18.17.6
+  resolution: "@types/node@npm:18.17.6"
+  checksum: 70bc92adde47d569f25c5ed40b55040cdf189518d6149e0c3041c6e60b1098cad9c48a856f0b7868ebd74d4098a0ca508b0ec4373dd96216eb8a387ee898e14c
   languageName: node
   linkType: hard
 
@@ -14716,7 +14716,7 @@ __metadata:
     "@nxtensions/astro": ^3.3.0
     "@prisma/client": ^5.1.1
     "@types/jest": 28.1.8
-    "@types/node": 18.7.1
+    "@types/node": 18.17.6
     "@types/storejs": ^2.0.3
     "@types/uuid": ^9.0.0
     "@typescript-eslint/eslint-plugin": ^5.49.0
