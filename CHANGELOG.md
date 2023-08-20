@@ -1,5 +1,32 @@
 # Changelog
 
+## [1.3.0](https://github.com/uptownhr/uptownhr/compare/v1.2.0...v1.3.0) (2023-08-20)
+
+
+### Features
+
+* added questions to frontend ([ac2b0d3](https://github.com/uptownhr/uptownhr/commit/ac2b0d31f381bf25f64ecb154a67b3658b0a0023))
+
+## [1.2.0](https://github.com/uptownhr/uptownhr/compare/v1.1.0...v1.2.0) (2023-08-19)
+
+
+### Features
+
+* new token ([09c9237](https://github.com/uptownhr/uptownhr/commit/09c9237c214768e3c0d2db03b812e600bba4e64d))
+
+## [1.1.0](https://github.com/uptownhr/uptownhr/compare/v1.0.0...v1.1.0) (2023-08-19)
+
+
+### Features
+
+* added a deployment job on release ([7c14356](https://github.com/uptownhr/uptownhr/commit/7c143562164909439a327b822b1b14d662136b22))
+* added fly deployment ([098e091](https://github.com/uptownhr/uptownhr/commit/098e0913aa9cca86b3a0c58b238e82c46f59645f))
+
+
+### Bug Fixes
+
+* removed global validation pipe ([86a66bd](https://github.com/uptownhr/uptownhr/commit/86a66bdc5ac3dd546f90b45db76ada94a2acb2eb))
+
 ## 1.0.0 (2023-08-18)
 
 

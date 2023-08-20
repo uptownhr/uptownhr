@@ -5,23 +5,6 @@ export class CreatePageInput {
   title: string;
 }
 
-export class Page {
-  @ApiProperty()
-  id: number;
-
-  @ApiProperty()
-  title: string;
-
-  @ApiProperty()
-  slug: string;
-
-  @ApiProperty()
-  createdAt: Date;
-
-  @ApiProperty()
-  updatedAt: Date;
-}
-
 export class AddQuestionInput {
   @ApiProperty()
   title: string;
@@ -41,6 +24,28 @@ export class Question {
 
   @ApiProperty()
   voteCount: number;
+}
+
+export class Page {
+  @ApiProperty()
+  id: number;
+
+  @ApiProperty()
+  title: string;
+
+  @ApiProperty()
+  slug: string;
+
+  @ApiProperty()
+  createdAt: Date;
+
+  @ApiProperty()
+  updatedAt: Date;
+}
+
+export class PageWithQuestions extends Page {
+  @ApiProperty({ type: Question, isArray: true })
+  questions: Question[];
 }
 
 export class AddAnswerInput {

@@ -22,3 +22,5 @@ primary_region = "lax"
 
 [env]
   DATABASE_URL = "file:/db/lov.db"
+  SUPERTOKENS_WEBSITE_DOMAIN = "https://uptownhr.com"
+  SUPERTOKENS_API_DOMAIN="https://lov.fly.dev"

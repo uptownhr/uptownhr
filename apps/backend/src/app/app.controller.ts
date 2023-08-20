@@ -2,6 +2,7 @@ import {
   Body,
   Controller,
   Get,
+  HttpException,
   Param,
   ParseIntPipe,
   Post,
@@ -17,6 +18,7 @@ import {
   Answer,
   CreatePageInput,
   Page,
+  PageWithQuestions,
   Question,
 } from './app.model';
 import { ApiResponse } from '@nestjs/swagger';
@@ -81,37 +83,64 @@ export class AppController {
     };
   }
 
-  @ApiResponse({ type: Question, status: 200, isArray: true })
+  @ApiResponse({ type: Page, status: 200 })
+  @Get('page/:id')
+  async getPage(id: number): Promise<Page> {
+    const page = await this.lovDb.page.findUnique({
+      where: {
+        id,
+      },
+    });
+
+    if (!page) {
+      throw new HttpException('Page not found', 404);
+    }
+
+    return page;
+  }
+
+  @ApiResponse({ type: PageWithQuestions, status: 200 })
   @Get('page/:id/questions')
   async getPageQuestions(
     @Param('id', ParseIntPipe) pageId: number
-  ): Promise<Question[]> {
-    const questions = await this.lovDb.question.findMany({
+  ): Promise<PageWithQuestions> {
+    const page = await this.lovDb.page.findUnique({
       where: {
-        pageId,
+        id: pageId,
       },
-      select: {
-        id: true,
-        title: true,
-        votes: {
-          select: {
-            id: true,
-          },
-        },
 
-        answers: {
-          select: {
-            id: true,
+      include: {
+        questions: {
+          include: {
+            votes: {
+              select: {
+                id: true,
+              },
+            },
+            answers: {
+              select: {
+                id: true,
+              },
+            },
           },
         },
       },
     });
 
-    return questions.map((q) => ({
+    if (!page) {
+      throw new HttpException('Page not found', 404);
+    }
+
+    const mappedQuestions = page.questions.map((q) => ({
       ...q,
       voteCount: q.votes.length,
       answerCount: q.answers.length,
     }));
+
+    return {
+      ...page,
+      questions: mappedQuestions,
+    };
   }
 
   @ApiResponse({ type: Answer, status: 201 })
