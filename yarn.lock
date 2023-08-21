@@ -220,11 +220,12 @@ __metadata:
   linkType: hard
 
 "@astrojs/rss@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@astrojs/rss@npm:2.0.0"
+  version: 2.4.4
+  resolution: "@astrojs/rss@npm:2.4.4"
   dependencies:
-    fast-xml-parser: ^4.0.8
-  checksum: 82db559099b6e867c242a7cda891ad3cf8c43896ac98e8f932c33325dae328497e9ac035f34a41ca32eb1ca125d8f960c8e6f070d72aecf32fce52f1a04cb13b
+    fast-xml-parser: ^4.2.5
+    kleur: ^4.1.5
+  checksum: e71b6145a4fcb856a11f826eca3856199d8701d0893cac044bbbaeca53c7dc00c120d9d3b2bb1fd3d24a41bc86a74bad2571e52a9f30d9345091769b58235b4c
   languageName: node
   linkType: hard
 
@@ -7787,14 +7788,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-xml-parser@npm:^4.0.8":
-  version: 4.0.13
-  resolution: "fast-xml-parser@npm:4.0.13"
+"fast-xml-parser@npm:^4.2.5":
+  version: 4.2.7
+  resolution: "fast-xml-parser@npm:4.2.7"
   dependencies:
     strnum: ^1.0.5
   bin:
     fxparser: src/cli/cli.js
-  checksum: 55c8b483f609258ada626898ff394d3bc983f56f868941d89c0ec22395e89364ce2d3068c1e15695019a520c21fa1166fc576a6d7339e99c9ffdc657402e777f
+  checksum: d8b0c9e04756f6c43fa0399428f30149acadae21350e42e26e8fe98e24e6afa6b9b00aa554453795036b00e9fee974a1b556fe2ba18be391d51a9bf1ab790e7c
   languageName: node
   linkType: hard
 
@@ -12891,7 +12892,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.7.1, prettier@npm:^2.8.3":
+"prettier@npm:^2.8.3, prettier@npm:^2.8.8":
   version: 2.8.8
   resolution: "prettier@npm:2.8.8"
   bin:
