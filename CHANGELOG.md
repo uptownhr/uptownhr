@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.4.0](https://github.com/uptownhr/uptownhr/compare/v1.3.0...v1.4.0) (2023-08-26)
+
+
+### Features
+
+* added ability to answer ([2394473](https://github.com/uptownhr/uptownhr/commit/2394473dc208090582f696e3f96f1d274250fe55))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @astrojs/mdx to ^0.19.0 ([3d16429](https://github.com/uptownhr/uptownhr/commit/3d1642906060f2de5c31c3986580768a27439893))
+* **deps:** update dependency @astrojs/rss to v2.4.4 ([d27bb7d](https://github.com/uptownhr/uptownhr/commit/d27bb7dc9befb2f9f3c64479da66e7745ad3a6a2))
+* **deps:** update dependency @astrojs/sitemap to v1.4.0 ([fe43762](https://github.com/uptownhr/uptownhr/commit/fe43762f48003dcd294bfc9803767f8d8032792f))
+* **deps:** update dependency @astrojs/svelte to v2.2.0 ([9bb0a4b](https://github.com/uptownhr/uptownhr/commit/9bb0a4b41e666efbb68bb910df36dab7098a5e98))
+* **deps:** update dependency @astrojs/tailwind to v3.1.3 ([6606919](https://github.com/uptownhr/uptownhr/commit/66069196ca66c888f95caca38ebabd083ad0d3d0))
+* **deps:** update dependency @nestjs/config to v2.3.4 ([2599655](https://github.com/uptownhr/uptownhr/commit/2599655db40a9e81323f98a18457e50970ea675d))
+* **deps:** update dependency axios to v1.4.0 ([73be31b](https://github.com/uptownhr/uptownhr/commit/73be31b1a3b6af7dd07a5039e8b0e5f121f794c5))
+* **deps:** update dependency svelte to v3.59.2 ([135501c](https://github.com/uptownhr/uptownhr/commit/135501c37a987307eb5d5d0ce2961a4cc70b0c7c))
+* **deps:** update dependency tslib to v2.6.2 ([d9b94a6](https://github.com/uptownhr/uptownhr/commit/d9b94a609ebc428232c788f98b84b2abb06d012b))
+* **deps:** update prisma monorepo to v5.2.0 ([4c4eca4](https://github.com/uptownhr/uptownhr/commit/4c4eca4ff39f0f27f973e5ba9d5b675a2bffdef8))
+* prettier dependency lockfile version ([0711ae6](https://github.com/uptownhr/uptownhr/commit/0711ae6bf5d7ee87a4d0d1ba0b7ebfd0e1e72077))
+
 ## [1.3.0](https://github.com/uptownhr/uptownhr/compare/v1.2.0...v1.3.0) (2023-08-20)
 
 
