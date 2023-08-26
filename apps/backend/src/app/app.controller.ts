@@ -74,11 +74,13 @@ export class AppController {
           },
         },
       },
+      include: {
+        answers: true,
+      },
     });
 
     return {
       ...question,
-      answerCount: 0,
       voteCount: 0,
     };
   }
@@ -120,6 +122,7 @@ export class AppController {
             answers: {
               select: {
                 id: true,
+                value: true,
               },
             },
           },
@@ -157,10 +160,7 @@ export class AppController {
       },
     });
 
-    return {
-      ...answer,
-      voteCount: 0,
-    };
+    return answer;
   }
 
   @ApiResponse({ type: Answer, status: 200, isArray: true })
@@ -206,7 +206,6 @@ export class AppController {
     return {
       ...vote.question,
       voteCount: vote.question.votes.length,
-      answerCount: vote.question.answers.length,
     };
   }
 
@@ -232,7 +231,7 @@ export class AppController {
 
     return {
       ...vote.answer,
-      voteCount: vote.answer.votes.length,
+      //      voteCount: vote.answer.votes.length,
     };
   }
 }

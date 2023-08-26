@@ -20,10 +20,10 @@ export class Question {
   title: string;
 
   @ApiProperty()
-  answerCount: number;
+  voteCount: number;
 
   @ApiProperty()
-  voteCount: number;
+  answers: Answer[];
 }
 
 export class Page {
@@ -62,7 +62,4 @@ export class Answer {
 
   @ApiProperty()
   value: string;
-
-  @ApiProperty()
-  voteCount: number;
 }

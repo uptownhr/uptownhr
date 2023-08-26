@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import { questionApi } from '@modules/qna/api';
+  import Question from '@modules/qna/Question.svelte';
 
   const url = new URL(window.location.href);
   const id = parseInt(url.searchParams.get('id'));
@@ -15,14 +16,14 @@
     question: null,
   };
 
-  async function addQuestion(x) {
+  async function addQuestion(q) {
     const question = await questionApi(`/question`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        title: form.question,
+        title: q,
         pageId: id,
       }),
     });
@@ -36,7 +37,7 @@
   {#if topic}
     <h1>{topic.title}</h1>
   {/if}
-  <form on:submit|preventDefault={() => addQuestion('test')}>
+  <form on:submit|preventDefault={() => addQuestion(form.question)}>
     <input
       type="text"
       bind:value={form.question}
@@ -49,8 +50,7 @@
     <ul>
       {#each topic.questions as question}
         <li>
-          {question.title} <br />
-          Votes: {question.voteCount} | Answers: {question.answerCount}
+          <Question {question} />
         </li>
       {/each}
     </ul>
