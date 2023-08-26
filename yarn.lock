@@ -3664,13 +3664,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry/types@npm:7.22.0":
-  version: 7.22.0
-  resolution: "@sentry/types@npm:7.22.0"
-  checksum: eec788104d3a8ed8b8bf57d95e6c1ec8ec48212a94914e4e1d8bc110fe6b88825ce2a299439d10bd2f0c69778afedabcc6cbf38c4850345e6954d8bc3be0060b
-  languageName: node
-  linkType: hard
-
 "@sinclair/typebox@npm:^0.27.8":
   version: 0.27.8
   resolution: "@sinclair/typebox@npm:0.27.8"
@@ -13431,13 +13424,11 @@ __metadata:
   linkType: hard
 
 "posthog-js@npm:^1.42.2":
-  version: 1.42.2
-  resolution: "posthog-js@npm:1.42.2"
+  version: 1.77.2
+  resolution: "posthog-js@npm:1.77.2"
   dependencies:
-    "@sentry/types": 7.22.0
     fflate: ^0.4.1
-    rrweb-snapshot: ^1.1.14
-  checksum: 6be66339a027060ee1fbf65c07ea0c640bb2bd83669106e33af5d30f4cd135b8cf6d18835abce3b5422bf30681e58f433a835f5d63febcae21d4b7796adb1e86
+  checksum: ddbfa59c2c1c8b2efd1fb5089d636c34f3099b3fbf090441ee745f119a5a9a09ba3c6391675f09b98cce6e40e18676abbf067d510b5340ac51ed72c22d477725
   languageName: node
   linkType: hard
 
@@ -14193,13 +14184,6 @@ __metadata:
   version: 0.1.2
   resolution: "rootpath@npm:0.1.2"
   checksum: e39fad0912f5757c087e1b9c0a66278bb9cbe5ffbacfb1960f75a4feddf16fe837319a5764abdb73839ef0e6ea8ef155b98eb383b951b25b279c153c50cd13f0
-  languageName: node
-  linkType: hard
-
-"rrweb-snapshot@npm:^1.1.14":
-  version: 1.1.14
-  resolution: "rrweb-snapshot@npm:1.1.14"
-  checksum: 2e9a30233b542824bbca46af5588d1d7c909efafa00b38fb79d59637af17ec0f3fbe60ed37c4195448804a22aea0f47531da25a42af6ac9dc6281c3c6e5693db
   languageName: node
   linkType: hard
 
