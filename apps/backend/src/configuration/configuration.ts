@@ -6,7 +6,7 @@ export interface Configuration {
     apiKey: string | undefined;
     appName: string | undefined;
     apiDomain: string | undefined;
-    websiteDomain: string | undefined;
+    websiteDomain: string;
     apiBasePath: string | undefined;
     websiteBasePath: string | undefined;
   };
@@ -20,7 +20,8 @@ export default (): Configuration => ({
     apiKey: process.env.SUPERTOKENS_API_KEY,
     appName: process.env.SUPERTOKENS_APP_NAME,
     apiDomain: process.env.SUPERTOKENS_API_DOMAIN,
-    websiteDomain: process.env.SUPERTOKENS_WEBSITE_DOMAIN,
+    websiteDomain:
+      process.env.SUPERTOKENS_WEBSITE_DOMAIN || 'http://localhost:3000',
     apiBasePath: process.env.SUPERTOKENS_API_BASE_PATH,
     websiteBasePath: process.env.SUPERTOKENS_WEBSITE_BASE_PATH,
   },
