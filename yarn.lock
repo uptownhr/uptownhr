@@ -123,6 +123,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@astrojs/markdown-remark@npm:3.0.0":
+  version: 3.0.0
+  resolution: "@astrojs/markdown-remark@npm:3.0.0"
+  dependencies:
+    "@astrojs/prism": ^3.0.0
+    github-slugger: ^2.0.0
+    import-meta-resolve: ^3.0.0
+    rehype-raw: ^6.1.1
+    rehype-stringify: ^9.0.4
+    remark-gfm: ^3.0.1
+    remark-parse: ^10.0.2
+    remark-rehype: ^10.1.0
+    remark-smartypants: ^2.0.0
+    shiki: ^0.14.3
+    unified: ^10.1.2
+    unist-util-visit: ^4.1.2
+    vfile: ^5.3.7
+  peerDependencies:
+    astro: ^3.0.0
+  checksum: b9006fb6b3ffedfb2d9a9f49d3f0f382b0d7c95456de3a32f6bdfc6b36a07625bd61aefae93a894ebe7acd19b91d1f6309b176289a478632d21c27003b69aad6
+  languageName: node
+  linkType: hard
+
 "@astrojs/markdown-remark@npm:^2.2.1":
   version: 2.2.1
   resolution: "@astrojs/markdown-remark@npm:2.2.1"
@@ -146,17 +169,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/mdx@npm:^0.19.0":
-  version: 0.19.7
-  resolution: "@astrojs/mdx@npm:0.19.7"
+"@astrojs/mdx@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@astrojs/mdx@npm:1.0.0"
   dependencies:
-    "@astrojs/markdown-remark": ^2.2.1
-    "@astrojs/prism": ^2.1.2
+    "@astrojs/markdown-remark": 3.0.0
+    "@astrojs/prism": 3.0.0
     "@mdx-js/mdx": ^2.3.0
-    acorn: ^8.8.0
-    es-module-lexer: ^1.1.1
-    estree-util-visit: ^1.2.0
-    github-slugger: ^1.4.0
+    acorn: ^8.10.0
+    es-module-lexer: ^1.3.0
+    estree-util-visit: ^1.2.1
+    github-slugger: ^2.0.0
     gray-matter: ^4.0.3
     hast-util-to-html: ^8.0.4
     kleur: ^4.1.4
@@ -164,11 +187,22 @@ __metadata:
     remark-frontmatter: ^4.0.1
     remark-gfm: ^3.0.1
     remark-smartypants: ^2.0.0
-    shiki: ^0.14.1
+    shiki: ^0.14.3
     source-map: ^0.7.4
-    unist-util-visit: ^4.1.0
-    vfile: ^5.3.2
-  checksum: 366a865ba0fa98e4901f9b65f677cd1dc0760b7fb05d8cfa5e3bc821904ac872cc00a59e246b510c266d3982f7837f01ca0464b6b56ccd840c16d51c6c751b8d
+    unist-util-visit: ^4.1.2
+    vfile: ^5.3.7
+  peerDependencies:
+    astro: ^3.0.0
+  checksum: 44d1658505840a0f041b6fa67dab24465bca054b52f0f2e855db269f1f0e8d2c2e2273906e8c581cacf6197276af2a4e9b43e65a360e7ba6c565732302fbeb2a
+  languageName: node
+  linkType: hard
+
+"@astrojs/prism@npm:3.0.0, @astrojs/prism@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@astrojs/prism@npm:3.0.0"
+  dependencies:
+    prismjs: ^1.29.0
+  checksum: 84d014943a81534e033a4b286c827eccb7600b51332bcddc06bd174e88c8cb3a6d31dcb691346cf1f0ea6e817dacbfa52a945081e413cc87e3b1449272237e02
   languageName: node
   linkType: hard
 
@@ -4612,7 +4646,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:^8.0.0, acorn@npm:^8.8.0":
+"acorn@npm:^8.0.0":
   version: 8.8.1
   resolution: "acorn@npm:8.8.1"
   bin:
@@ -4621,7 +4655,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:^8.1.0, acorn@npm:^8.8.1, acorn@npm:^8.9.0":
+"acorn@npm:^8.1.0, acorn@npm:^8.10.0, acorn@npm:^8.8.1, acorn@npm:^8.9.0":
   version: 8.10.0
   resolution: "acorn@npm:8.10.0"
   bin:
@@ -7176,7 +7210,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"es-module-lexer@npm:^1.1.1, es-module-lexer@npm:^1.3.0":
+"es-module-lexer@npm:^1.3.0":
   version: 1.3.0
   resolution: "es-module-lexer@npm:1.3.0"
   checksum: 48fd9f504a9d2a894126f75c8b7ccc6273a289983e9b67255f165bfd9ae765d50100218251e94e702ca567826905ea2f7b3b4a0c4d74d3ce99cce3a2a606a238
@@ -7619,7 +7653,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"estree-util-visit@npm:^1.0.0, estree-util-visit@npm:^1.2.0":
+"estree-util-visit@npm:^1.0.0, estree-util-visit@npm:^1.2.1":
   version: 1.2.1
   resolution: "estree-util-visit@npm:1.2.1"
   dependencies:
@@ -9014,6 +9048,13 @@ __metadata:
   version: 2.2.1
   resolution: "import-meta-resolve@npm:2.2.1"
   checksum: 8dd5ff7f6e96dea13653cbf79457588b9850949fde0412dba3cc944f8a61a155a3713d65878d903af6b0db7da960600ef66dfe994311743cdd49fe33dc91b0c5
+  languageName: node
+  linkType: hard
+
+"import-meta-resolve@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "import-meta-resolve@npm:3.0.0"
+  checksum: d0428cd14915ee0093b995dc5bbc70bd01cc668822f52b62af98f728e5d6a08724f07e6aa9f5fae002d5eecbf6ec2cdcd379bf4869dd1b353bd080693f91e394
   languageName: node
   linkType: hard
 
@@ -13111,7 +13152,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prismjs@npm:^1.28.0":
+"prismjs@npm:^1.28.0, prismjs@npm:^1.29.0":
   version: 1.29.0
   resolution: "prismjs@npm:1.29.0"
   checksum: 007a8869d4456ff8049dc59404e32d5666a07d99c3b0e30a18bd3b7676dfa07d1daae9d0f407f20983865fd8da56de91d09cb08e6aa61f5bc420a27c0beeaf93
@@ -13481,6 +13522,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rehype-stringify@npm:^9.0.4":
+  version: 9.0.4
+  resolution: "rehype-stringify@npm:9.0.4"
+  dependencies:
+    "@types/hast": ^2.0.0
+    hast-util-to-html: ^8.0.0
+    unified: ^10.0.0
+  checksum: 7da6f07a8b31e544c3dcf648ddc831e3ea72d5d417f95471cd6f3ec172e4dfbf5615cbd5b53aebe8a36febce604a95fb23f83d650d476c3cd79bc0834d577359
+  languageName: node
+  linkType: hard
+
 "rehype@npm:^12.0.1":
   version: 12.0.1
   resolution: "rehype@npm:12.0.1"
@@ -13535,6 +13587,17 @@ __metadata:
     mdast-util-from-markdown: ^1.0.0
     unified: ^10.0.0
   checksum: 505088e564ab53ff054433368adbb7b551f69240c7d9768975529837a86f1d0f085e72d6211929c5c42db315273df4afc94f3d3a8662ffdb69468534c6643d29
+  languageName: node
+  linkType: hard
+
+"remark-parse@npm:^10.0.2":
+  version: 10.0.2
+  resolution: "remark-parse@npm:10.0.2"
+  dependencies:
+    "@types/mdast": ^3.0.0
+    mdast-util-from-markdown: ^1.0.0
+    unified: ^10.0.0
+  checksum: 5041b4b44725f377e69986e02f8f072ae2222db5e7d3b6c80829756b842e811343ffc2069cae1f958a96bfa36104ab91a57d7d7e2f0cef521e210ab8c614d5c7
   languageName: node
   linkType: hard
 
@@ -14143,7 +14206,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shiki@npm:^0.14.1":
+"shiki@npm:^0.14.1, shiki@npm:^0.14.3":
   version: 0.14.3
   resolution: "shiki@npm:0.14.3"
   dependencies:
@@ -15603,7 +15666,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "uptownhr@workspace:."
   dependencies:
-    "@astrojs/mdx": ^0.19.0
+    "@astrojs/mdx": ^1.0.0
     "@astrojs/rss": ^2.0.0
     "@astrojs/sitemap": ^1.0.0
     "@astrojs/svelte": ^2.0.0
