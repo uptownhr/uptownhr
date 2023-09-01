@@ -45,7 +45,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ampproject/remapping@npm:^2.2.0":
+"@ampproject/remapping@npm:^2.2.0, @ampproject/remapping@npm:^2.2.1":
   version: 2.2.1
   resolution: "@ampproject/remapping@npm:2.2.1"
   dependencies:
@@ -4091,6 +4091,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/estree@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@types/estree@npm:1.0.1"
+  checksum: e9aa175eacb797216fafce4d41e8202c7a75555bc55232dee0f9903d7171f8f19f0ae7d5191bb1a88cb90e65468be508c0df850a9fb81b4433b293a5a749899d
+  languageName: node
+  linkType: hard
+
 "@types/express-serve-static-core@npm:*, @types/express-serve-static-core@npm:^4.17.31":
   version: 4.17.33
   resolution: "@types/express-serve-static-core@npm:4.17.33"
@@ -5239,6 +5246,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"aria-query@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "aria-query@npm:5.3.0"
+  dependencies:
+    dequal: ^2.0.3
+  checksum: 305bd73c76756117b59aba121d08f413c7ff5e80fa1b98e217a3443fcddb9a232ee790e24e432b59ae7625aebcf4c47cb01c2cac872994f0b426f5bdfcd96ba9
+  languageName: node
+  linkType: hard
+
 "array-flatten@npm:1.1.1":
   version: 1.1.1
   resolution: "array-flatten@npm:1.1.1"
@@ -5483,6 +5499,15 @@ __metadata:
     form-data: ^4.0.0
     proxy-from-env: ^1.1.0
   checksum: e7405a5dbbea97760d0e6cd58fecba311b0401ddb4a8efbc4108f5537da9b3f278bde566deb777935a960beec4fa18e7b8353881f2f465e4f2c0e949fead35be
+  languageName: node
+  linkType: hard
+
+"axobject-query@npm:^3.2.1":
+  version: 3.2.1
+  resolution: "axobject-query@npm:3.2.1"
+  dependencies:
+    dequal: ^2.0.3
+  checksum: a94047e702b57c91680e6a952ec4a1aaa2cfd0d80ead76bc8c954202980d8c51968a6ea18b4d8010e8e2cf95676533d8022a8ebba9abc1dfe25686721df26fd2
   languageName: node
   linkType: hard
 
@@ -6335,6 +6360,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"code-red@npm:^1.0.3":
+  version: 1.0.4
+  resolution: "code-red@npm:1.0.4"
+  dependencies:
+    "@jridgewell/sourcemap-codec": ^1.4.15
+    "@types/estree": ^1.0.1
+    acorn: ^8.10.0
+    estree-walker: ^3.0.3
+    periscopic: ^3.1.0
+  checksum: ca534d9daf0fb50f8180dd5cb2de9f670264584d1132e00743967c626888a253639023ae147687201b50d25e2fa31c2d100908d7a9286721c47e05c0079b64bd
+  languageName: node
+  linkType: hard
+
 "collect-v8-coverage@npm:^1.0.0":
   version: 1.0.1
   resolution: "collect-v8-coverage@npm:1.0.1"
@@ -6748,7 +6786,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-tree@npm:^2.2.1":
+"css-tree@npm:^2.2.1, css-tree@npm:^2.3.1":
   version: 2.3.1
   resolution: "css-tree@npm:2.3.1"
   dependencies:
@@ -7095,7 +7133,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dequal@npm:^2.0.0":
+"dequal@npm:^2.0.0, dequal@npm:^2.0.3":
   version: 2.0.3
   resolution: "dequal@npm:2.0.3"
   checksum: 8679b850e1a3d0ebbc46ee780d5df7b478c23f335887464023a631d1b9af051ad4a6595a44220f9ff8ff95a8ddccf019b5ad778a976fd7bbf77383d36f412f90
@@ -7929,7 +7967,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"estree-walker@npm:^3.0.0":
+"estree-walker@npm:^3.0.0, estree-walker@npm:^3.0.3":
   version: 3.0.3
   resolution: "estree-walker@npm:3.0.3"
   dependencies:
@@ -9587,7 +9625,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-reference@npm:^3.0.0":
+"is-reference@npm:^3.0.0, is-reference@npm:^3.0.1":
   version: 3.0.1
   resolution: "is-reference@npm:3.0.1"
   dependencies:
@@ -10781,6 +10819,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"locate-character@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "locate-character@npm:3.0.0"
+  checksum: 2d9e9f45e2dce7464c016ed6d81ebc938bc9c656392f7d6858308ab6fdaa57bcd4b6b479291d49e7db4047e3f321ddadbe78355f349b7974b203f19674e277cc
+  languageName: node
+  linkType: hard
+
 "locate-path@npm:^5.0.0":
   version: 5.0.0
   resolution: "locate-path@npm:5.0.0"
@@ -10989,6 +11034,15 @@ __metadata:
   dependencies:
     "@jridgewell/sourcemap-codec": ^1.4.13
   checksum: 7bdf22e27334d8a393858a16f5f840af63a7c05848c000fd714da5aa5eefa09a1bc01d8469362f25cc5c4a14ec01b46557b7fff8751365522acddf21e57c488d
+  languageName: node
+  linkType: hard
+
+"magic-string@npm:^0.30.0":
+  version: 0.30.3
+  resolution: "magic-string@npm:0.30.3"
+  dependencies:
+    "@jridgewell/sourcemap-codec": ^1.4.15
+  checksum: a5a9ddf9bd3bf49a2de1048bf358464f1bda7b3cc1311550f4a0ba8f81a4070e25445d53a5ee28850161336f1bff3cf28aa3320c6b4aeff45ce3e689f300b2f3
   languageName: node
   linkType: hard
 
@@ -12819,6 +12873,17 @@ __metadata:
     estree-walker: ^3.0.0
     is-reference: ^3.0.0
   checksum: 0920ea1b0294c2463b7df858d7f895d0a69f15ec5c7b93d63749e7a8f6d9c065853ebea701305f1756f70310633832cf5c90e43e9363cce51abec44cc2f5c188
+  languageName: node
+  linkType: hard
+
+"periscopic@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "periscopic@npm:3.1.0"
+  dependencies:
+    "@types/estree": ^1.0.0
+    estree-walker: ^3.0.0
+    is-reference: ^3.0.0
+  checksum: 2153244352e58a0d76e7e8d9263e66fe74509495f809af388da20045fb30aa3e93f2f94468dc0b9166ecf206fcfc0d73d2c7641c6fbedc07b1de858b710142cb
   languageName: node
   linkType: hard
 
@@ -15134,10 +15199,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svelte@npm:^3.54.0":
-  version: 3.59.2
-  resolution: "svelte@npm:3.59.2"
-  checksum: 3e9d770292ab5a0061ff2d3a6f77b323014399de7458371ab507465f9860d04d0c8c7a50239d15c78b920cd42065953e3c4a36abb69a2285c52c825017621444
+"svelte@npm:^4.0.0":
+  version: 4.2.0
+  resolution: "svelte@npm:4.2.0"
+  dependencies:
+    "@ampproject/remapping": ^2.2.1
+    "@jridgewell/sourcemap-codec": ^1.4.15
+    "@jridgewell/trace-mapping": ^0.3.18
+    acorn: ^8.9.0
+    aria-query: ^5.3.0
+    axobject-query: ^3.2.1
+    code-red: ^1.0.3
+    css-tree: ^2.3.1
+    estree-walker: ^3.0.3
+    is-reference: ^3.0.1
+    locate-character: ^3.0.0
+    magic-string: ^0.30.0
+    periscopic: ^3.1.0
+  checksum: 2555f222c210a751fff85596adc5a1f0e1ebe7e0499ec7c35b5e8111200271ba0cd0cedeef637dc66f43f4866ad17240f89187bfbaf2ca8fff9a522fc7c4369f
   languageName: node
   linkType: hard
 
@@ -16043,7 +16122,7 @@ __metadata:
     rxjs: ^7.0.0
     store: ^2.0.12
     supertokens-node: ^12.1.6
-    svelte: ^3.54.0
+    svelte: ^4.0.0
     ts-jest: 29.1.1
     ts-node: 10.9.1
     tslib: ^2.3.0
