@@ -232,13 +232,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/sitemap@npm:^1.0.0":
-  version: 1.4.0
-  resolution: "@astrojs/sitemap@npm:1.4.0"
+"@astrojs/sitemap@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@astrojs/sitemap@npm:3.0.0"
   dependencies:
     sitemap: ^7.1.1
-    zod: ^3.17.3
-  checksum: ef0360d7b49861b4a41ace6d5708ce3d57f7937f36299169bc31a4cf1eff45149f1e8879e3bbbfed0a738062bdec5e4b31d483b5ed4bbd08d35c2872e6bc90a3
+    zod: 3.21.1
+  checksum: 45c5371da74737c6ba651dd7502fd831543b069b9c73d537e8204411b3f72a2676db2a56d6e485c243f013aa90fc44218485b3bfef1f4aeeca3da33d34f5991c
   languageName: node
   linkType: hard
 
@@ -16066,7 +16066,7 @@ __metadata:
   dependencies:
     "@astrojs/mdx": ^1.0.0
     "@astrojs/rss": ^3.0.0
-    "@astrojs/sitemap": ^1.0.0
+    "@astrojs/sitemap": ^3.0.0
     "@astrojs/svelte": ^4.0.0
     "@astrojs/tailwind": ^3.0.0
     "@flydotio/dockerfile": latest
@@ -16977,10 +16977,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:^3.17.3":
-  version: 3.20.2
-  resolution: "zod@npm:3.20.2"
-  checksum: 04172f7e9350372684ccd298d4716908edc9113751295b6c4e1b3ea84e2af8997e504b33ba36f4741417bb2a5dc90bfd40501f6b0e7389df10e42a63d6d8366c
+"zod@npm:3.21.1":
+  version: 3.21.1
+  resolution: "zod@npm:3.21.1"
+  checksum: e02ed16b26e171f244fb7592177bef21b67956683aaed57bc8f02dfa5ad307d5cf347e9557c84c0849d96305efaf7c90c909620eaade08cfdf35f62935d741d2
   languageName: node
   linkType: hard
 
