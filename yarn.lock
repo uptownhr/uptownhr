@@ -255,18 +255,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/tailwind@npm:^3.0.0":
-  version: 3.1.3
-  resolution: "@astrojs/tailwind@npm:3.1.3"
+"@astrojs/tailwind@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "@astrojs/tailwind@npm:5.0.0"
   dependencies:
-    "@proload/core": ^0.3.3
-    autoprefixer: ^10.4.14
-    postcss: ^8.4.23
+    autoprefixer: ^10.4.15
+    postcss: ^8.4.28
     postcss-load-config: ^4.0.1
   peerDependencies:
-    astro: ^2.5.0
+    astro: ^3.0.0
     tailwindcss: ^3.0.24
-  checksum: 5f9d00a383884d2c090e312c925321b1fc96def37965f03eda22aee887c0ee41a22ca1b858de8a1171c9d4258b9e6871139e43c48bab99c5ef7bd47986a90cb6
+  checksum: e21c785d7c931e3abcb46bc6d5e1c3984e24f16db2e2a32e838c30cce32485b8aa2880d9755bbb9d703ee26bd4297c05e9541738b023fe636f8052ed27092e9c
   languageName: node
   linkType: hard
 
@@ -3821,16 +3820,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@proload/core@npm:^0.3.3":
-  version: 0.3.3
-  resolution: "@proload/core@npm:0.3.3"
-  dependencies:
-    deepmerge: ^4.2.2
-    escalade: ^3.1.1
-  checksum: bf1483f21928eabbf632b3d34bb53b0d86d0c44d22c2bf798151351c0179db4fdefa6801176bff6a6318e01caa3bc486d600d3b1afd963a57cf227168639bc7f
-  languageName: node
-  linkType: hard
-
 "@sinclair/typebox@npm:^0.27.8":
   version: 0.27.8
   resolution: "@sinclair/typebox@npm:0.27.8"
@@ -5423,7 +5412,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:^10.4.14":
+"autoprefixer@npm:^10.4.15":
   version: 10.4.15
   resolution: "autoprefixer@npm:10.4.15"
   dependencies:
@@ -13369,18 +13358,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.23, postcss@npm:^8.4.27":
-  version: 8.4.28
-  resolution: "postcss@npm:8.4.28"
-  dependencies:
-    nanoid: ^3.3.6
-    picocolors: ^1.0.0
-    source-map-js: ^1.0.2
-  checksum: f605c24a36f7e400bad379735fbfc893ccb8d293ad6d419bb824db77cdcb69f43d614ef35f9f7091f32ca588d130ec60dbcf53b366e6bf88a8a64bbeb3c05f6d
-  languageName: node
-  linkType: hard
-
-"postcss@npm:^8.4.24":
+"postcss@npm:^8.4.24, postcss@npm:^8.4.28":
   version: 8.4.29
   resolution: "postcss@npm:8.4.29"
   dependencies:
@@ -13388,6 +13366,17 @@ __metadata:
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
   checksum: dd6daa25e781db9ae5b651d9b7bfde0ec6e60e86a37da69a18eb4773d5ddd51e28fc4ff054fbdc04636a31462e6bf09a1e50986f69ac52b10d46b7457cd36d12
+  languageName: node
+  linkType: hard
+
+"postcss@npm:^8.4.27":
+  version: 8.4.28
+  resolution: "postcss@npm:8.4.28"
+  dependencies:
+    nanoid: ^3.3.6
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.2
+  checksum: f605c24a36f7e400bad379735fbfc893ccb8d293ad6d419bb824db77cdcb69f43d614ef35f9f7091f32ca588d130ec60dbcf53b366e6bf88a8a64bbeb3c05f6d
   languageName: node
   linkType: hard
 
@@ -16068,7 +16057,7 @@ __metadata:
     "@astrojs/rss": ^3.0.0
     "@astrojs/sitemap": ^3.0.0
     "@astrojs/svelte": ^4.0.0
-    "@astrojs/tailwind": ^3.0.0
+    "@astrojs/tailwind": ^5.0.0
     "@flydotio/dockerfile": latest
     "@nestjs/common": ^9.0.0
     "@nestjs/config": ^3.0.0
