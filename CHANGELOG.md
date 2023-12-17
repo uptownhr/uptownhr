@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.5.0](https://github.com/uptownhr/uptownhr/compare/v1.4.2...v1.5.0) (2023-12-17)
+
+
+### Features
+
+* adding playwright ([476f46a](https://github.com/uptownhr/uptownhr/commit/476f46a28ad78e0f4f6cca943235025243cf3345))
+
+## [1.4.2](https://github.com/uptownhr/uptownhr/compare/v1.4.1...v1.4.2) (2023-09-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @astrojs/mdx to v1 ([e6ac75e](https://github.com/uptownhr/uptownhr/commit/e6ac75e66d35039354891f1268e79b8b5786fe51))
+* **deps:** update dependency @astrojs/rss to v3 ([c9c4cc1](https://github.com/uptownhr/uptownhr/commit/c9c4cc1803d01187e725aa1556f93e0a9300beb1))
+* **deps:** update dependency @astrojs/sitemap to v3 ([6b664be](https://github.com/uptownhr/uptownhr/commit/6b664bee5c5352e4f50a3ddce3b4edd4801291c3))
+* **deps:** update dependency @astrojs/svelte to v4 ([ff5cda7](https://github.com/uptownhr/uptownhr/commit/ff5cda719523f8e38b2207cd84c08b22434a4327))
+* **deps:** update dependency @astrojs/tailwind to v5 ([b5eb98e](https://github.com/uptownhr/uptownhr/commit/b5eb98eca33f55b245c8892cd7d41d13e206fb85))
+* **deps:** update dependency @nestjs/config to v3 ([b9188c7](https://github.com/uptownhr/uptownhr/commit/b9188c7560d6640834fd1cdbf0287be5d480787e))
+* **deps:** update dependency axios to v1.5.0 ([5d21a97](https://github.com/uptownhr/uptownhr/commit/5d21a97ba1e7a8ed0097d29dc658153228d1881e))
+* **deps:** update dependency svelte to v4 ([2b59f89](https://github.com/uptownhr/uptownhr/commit/2b59f89cd0f8eb19b5287672a4e91d13e9511e29))
+
 ## [1.4.1](https://github.com/uptownhr/uptownhr/compare/v1.4.0...v1.4.1) (2023-08-26)
 
 

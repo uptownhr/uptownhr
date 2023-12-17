@@ -6,6 +6,7 @@ import {
   Param,
   ParseIntPipe,
   Post,
+  Query,
   UseGuards,
 } from '@nestjs/common';
 
@@ -23,11 +24,14 @@ import {
 } from './app.model';
 import { ApiResponse } from '@nestjs/swagger';
 
+import { firefox } from 'playwright';
+import { Page as PlayPage } from 'playwright';
+
 @Controller()
 export class AppController {
   constructor(
     private readonly appService: AppService,
-    private readonly lovDb: LovDb
+    private readonly lovDb: LovDb,
   ) {}
 
   @Get()
@@ -39,6 +43,57 @@ export class AppController {
   @Get('test')
   test() {
     return 'test';
+  }
+
+  @Get('play')
+  async play(@Query('url') url: string) {
+    if (!url) {
+      throw new HttpException('url is required', 400);
+    }
+
+    const browser = await firefox.launch({ headless: false });
+    const context = await browser.newContext();
+    const page = await context.newPage();
+
+    await page.goto(url, {
+      waitUntil: 'domcontentloaded',
+      timeout: 60000,
+    });
+
+    await page.waitForTimeout(4000);
+
+    async function getRedfinPropertyValueFromPage(page: PlayPage) {
+      const scriptEls = await page.$$('script[type="application/ld+json"]');
+      const elTexts = await Promise.all(
+        scriptEls.map(async (el) => {
+          const text = await el.innerText();
+          console.log('text', text);
+          try {
+            const json = JSON.parse(text);
+
+            return json;
+          } catch (e) {
+            return;
+          }
+        }),
+      );
+
+      console.log('elTexts', elTexts);
+
+      const sfrPropertyEl = elTexts
+        .filter((el) => el)
+        .find((el) => {
+          const type = el['@type'];
+
+          return type?.[0] === 'Product';
+        });
+
+      return sfrPropertyEl.offers.price;
+    }
+
+    const price = await getRedfinPropertyValueFromPage(page);
+
+    return price;
   }
 
   @ApiResponse({ type: Page, status: 201 })
@@ -104,7 +159,7 @@ export class AppController {
   @ApiResponse({ type: PageWithQuestions, status: 200 })
   @Get('page/:id/questions')
   async getPageQuestions(
-    @Param('id', ParseIntPipe) pageId: number
+    @Param('id', ParseIntPipe) pageId: number,
   ): Promise<PageWithQuestions> {
     const page = await this.lovDb.page.findUnique({
       where: {
@@ -166,7 +221,7 @@ export class AppController {
   @ApiResponse({ type: Answer, status: 200, isArray: true })
   @Get('question/:id/answers')
   async getQuestionAnswers(
-    @Param('id', ParseIntPipe) questionId: number
+    @Param('id', ParseIntPipe) questionId: number,
   ): Promise<Answer[]> {
     const answers = await this.lovDb.answer.findMany({
       where: {
