@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.1](https://github.com/uptownhr/uptownhr/compare/v1.4.0...v1.4.1) (2023-12-17)
+
+
+### Bug Fixes
+
+* reverting ([1a294fd](https://github.com/uptownhr/uptownhr/commit/1a294fd40d8c581fcf328980acdbd56b0a7fb1ab))
+* websiteDomain default set in configuration ([ab411c5](https://github.com/uptownhr/uptownhr/commit/ab411c5406621fafbaf58ebee0d201a9b3416a37))
+
 ## [1.5.0](https://github.com/uptownhr/uptownhr/compare/v1.4.2...v1.5.0) (2023-12-17)
 
 
