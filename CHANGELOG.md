@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/uptownhr/uptownhr/compare/v1.5.0...v1.5.1) (2023-12-17)
+
+
+### Bug Fixes
+
+* bringing things back ([f43107b](https://github.com/uptownhr/uptownhr/commit/f43107b4f47f8b69926c166a2e75519f455305e2))
+
 ## [1.5.0](https://github.com/uptownhr/uptownhr/compare/v1.4.1...v1.5.0) (2023-12-17)
 
 
