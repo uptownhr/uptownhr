@@ -15,4 +15,4 @@ This is a monorepo with NX for with the following projects
 - Generate Prisma client for app `nx g @nx-tools/nx-prisma:generate {name}`
 
 ## Todo
-- [ ] Deployment pipeline 
+- [x] Deployment pipeline 
