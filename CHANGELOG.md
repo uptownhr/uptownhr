@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.4](https://github.com/uptownhr/uptownhr/compare/v1.5.3...v1.5.4) (2023-12-17)
+
+
+### Bug Fixes
+
+* explicit install deps ([c2855cf](https://github.com/uptownhr/uptownhr/commit/c2855cfe60aff557ce1826a3b300d7110eb0eee2))
+
 ## [1.5.3](https://github.com/uptownhr/uptownhr/compare/v1.5.2...v1.5.3) (2023-12-17)
 
 
