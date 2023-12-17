@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.2](https://github.com/uptownhr/uptownhr/compare/v1.5.1...v1.5.2) (2023-12-17)
+
+
+### Bug Fixes
+
+* added playwright install ([98d1f5b](https://github.com/uptownhr/uptownhr/commit/98d1f5bff529ad059f953e679f625393329a7c13))
+
 ## [1.5.1](https://github.com/uptownhr/uptownhr/compare/v1.5.0...v1.5.1) (2023-12-17)
 
 
