@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.6](https://github.com/uptownhr/uptownhr/compare/v1.5.5...v1.5.6) (2023-12-17)
+
+
+### Bug Fixes
+
+* triggering deployment ([914c291](https://github.com/uptownhr/uptownhr/commit/914c291bd45867ad2fc7a13a005f532b884e5ba0))
+
 ## [1.5.5](https://github.com/uptownhr/uptownhr/compare/v1.5.4...v1.5.5) (2023-12-17)
 
 
