@@ -51,7 +51,7 @@ export class AppController {
       throw new HttpException('url is required', 400);
     }
 
-    const browser = await firefox.launch({ headless: false });
+    const browser = await firefox.launch({ headless: true });
     const context = await browser.newContext();
     const page = await context.newPage();
 
