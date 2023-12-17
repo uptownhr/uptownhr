@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.5](https://github.com/uptownhr/uptownhr/compare/v1.5.4...v1.5.5) (2023-12-17)
+
+
+### Bug Fixes
+
+* making headless ([a948164](https://github.com/uptownhr/uptownhr/commit/a948164cc7c1251baa6d0e95613484c98021a601))
+
 ## [1.5.4](https://github.com/uptownhr/uptownhr/compare/v1.5.3...v1.5.4) (2023-12-17)
 
 
