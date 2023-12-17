@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.3](https://github.com/uptownhr/uptownhr/compare/v1.5.2...v1.5.3) (2023-12-17)
+
+
+### Bug Fixes
+
+* installing firefox deps ([fcd9bf1](https://github.com/uptownhr/uptownhr/commit/fcd9bf1b6f601681388c492479bdedcc692c1e16))
+
 ## [1.5.2](https://github.com/uptownhr/uptownhr/compare/v1.5.1...v1.5.2) (2023-12-17)
 
 
