@@ -267,8 +267,8 @@ export namespace Prisma {
   export import Exact = $Public.Exact
 
   /**
-   * Prisma Client JS version: 5.1.1
-   * Query Engine version: 6a3747c37ff169c90047725a05a6ef02e32ac97e
+   * Prisma Client JS version: 5.2.0
+   * Query Engine version: 2804dc98259d2ea960602aca6b8e7fdc03c1758f
    */
   export type PrismaVersion = {
     client: string
@@ -1048,6 +1048,11 @@ export namespace Prisma {
      * Overwrites the datasource url from your schema.prisma file
      */
     datasources?: Datasources
+
+    /**
+     * Overwrites the datasource url from your schema.prisma file
+     */
+    datasourceUrl?: string
 
     /**
      * @default "colorless"
@@ -7653,6 +7658,18 @@ export namespace Prisma {
   /**
    * Aliases for legacy arg types
    */
+    /**
+     * @deprecated Use PageCountOutputTypeDefaultArgs instead
+     */
+    export type PageCountOutputTypeArgs<ExtArgs extends $Extensions.Args = $Extensions.DefaultArgs> = PageCountOutputTypeDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use QuestionCountOutputTypeDefaultArgs instead
+     */
+    export type QuestionCountOutputTypeArgs<ExtArgs extends $Extensions.Args = $Extensions.DefaultArgs> = QuestionCountOutputTypeDefaultArgs<ExtArgs>
+    /**
+     * @deprecated Use AnswerCountOutputTypeDefaultArgs instead
+     */
+    export type AnswerCountOutputTypeArgs<ExtArgs extends $Extensions.Args = $Extensions.DefaultArgs> = AnswerCountOutputTypeDefaultArgs<ExtArgs>
     /**
      * @deprecated Use PageDefaultArgs instead
      */

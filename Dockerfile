@@ -26,12 +26,13 @@ RUN apt-get update -qq && \
     apt-get install -y build-essential openssl pkg-config python-is-python3
 
 # Install node modules
-COPY --link package.json yarn.lock .yarnrc.yml ./
-COPY --link .yarn ./.yarn
-RUN yarn install
+COPY --link . .
+#COPY --link package.json yarn.lock .yarnrc.yml ./
+#COPY --link .yarn ./.yarn
+RUN yarn
 
 # Copy application code
-COPY --link . .
+
 
 # Build application
 RUN yarn nx run backend:build:production

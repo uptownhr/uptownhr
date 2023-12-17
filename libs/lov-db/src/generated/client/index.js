@@ -30,15 +30,13 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 5.1.1
- * Query Engine version: 6a3747c37ff169c90047725a05a6ef02e32ac97e
+ * Prisma Client JS version: 5.2.0
+ * Query Engine version: 2804dc98259d2ea960602aca6b8e7fdc03c1758f
  */
 Prisma.prismaVersion = {
-  client: "5.1.1",
-  engine: "6a3747c37ff169c90047725a05a6ef02e32ac97e"
+  client: "5.2.0",
+  engine: "2804dc98259d2ea960602aca6b8e7fdc03c1758f"
 }
-
-false
 
 Prisma.PrismaClientKnownRequestError = PrismaClientKnownRequestError;
 Prisma.PrismaClientUnknownRequestError = PrismaClientUnknownRequestError
@@ -147,7 +145,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/uptown/Projects/uptownhr/uptownhr/libs/lov-db/src/generated/client",
+      "value": "/Users/james/Projects/uptownhr/uptownhr/libs/lov-db/src/generated/client",
       "fromEnvVar": null
     },
     "config": {
@@ -156,7 +154,7 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "debian-openssl-1.0.x",
+        "value": "darwin-arm64",
         "native": true
       },
       {
@@ -180,17 +178,28 @@ const config = {
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null
+    "rootEnvPath": "../../../../../.env",
+    "schemaEnvPath": "../../../../../.env"
   },
   "relativePath": "../../../prisma",
-  "clientVersion": "5.1.1",
-  "engineVersion": "6a3747c37ff169c90047725a05a6ef02e32ac97e",
+  "clientVersion": "5.2.0",
+  "engineVersion": "2804dc98259d2ea960602aca6b8e7fdc03c1758f",
   "datasourceNames": [
     "db"
   ],
   "activeProvider": "sqlite",
-  "dataProxy": false,
-  "postinstall": false
+  "postinstall": false,
+  "inlineDatasources": {
+    "db": {
+      "url": {
+        "fromEnvVar": "DATABASE_URL",
+        "value": null
+      }
+    }
+  },
+  "inlineSchema": "Z2VuZXJhdG9yIGNsaWVudCB7CiAgcHJvdmlkZXIgPSAicHJpc21hLWNsaWVudC1qcyIKICBvdXRwdXQgICA9ICIuLi9zcmMvZ2VuZXJhdGVkL2NsaWVudCIKICBiaW5hcnlUYXJnZXRzID0gWyJuYXRpdmUiLCAibGludXgtbXVzbCIsICJsaW51eC1hcm02NC1vcGVuc3NsLTEuMS54IiwgImRlYmlhbi1vcGVuc3NsLTMuMC54IiwgImRhcndpbi1hcm02NCJdCn0KCmRhdGFzb3VyY2UgZGIgewogIHByb3ZpZGVyID0gInNxbGl0ZSIKICB1cmwgICAgICA9IGVudigiREFUQUJBU0VfVVJMIikKfQoKbW9kZWwgUGFnZSB7CiAgaWQgSW50IEBpZCBAZGVmYXVsdChhdXRvaW5jcmVtZW50KCkpCgogIHNsdWcgIFN0cmluZyBAdW5pcXVlCiAgdGl0bGUgU3RyaW5nCgogIGNyZWF0ZWRBdCBEYXRlVGltZSBAZGVmYXVsdChub3coKSkKICB1cGRhdGVkQXQgRGF0ZVRpbWUgQHVwZGF0ZWRBdAoKICBxdWVzdGlvbnMgUXVlc3Rpb25bXQp9Cgptb2RlbCBRdWVzdGlvbiB7CiAgaWQgICAgIEludCBAaWQgQGRlZmF1bHQoYXV0b2luY3JlbWVudCgpKQogIHBhZ2VJZCBJbnQKCiAgdGl0bGUgU3RyaW5nCgogIGNyZWF0ZWRBdCBEYXRlVGltZSBAZGVmYXVsdChub3coKSkKICB1cGRhdGVkQXQgRGF0ZVRpbWUgQHVwZGF0ZWRBdAoKICBwYWdlICAgIFBhZ2UgICAgICAgICAgIEByZWxhdGlvbihmaWVsZHM6IFtwYWdlSWRdLCByZWZlcmVuY2VzOiBbaWRdKQogIGFuc3dlcnMgQW5zd2VyW10KICB2b3RlcyAgIFF1ZXN0aW9uVm90ZVtdCn0KCm1vZGVsIFF1ZXN0aW9uVm90ZSB7CiAgaWQgSW50IEBpZCBAZGVmYXVsdChhdXRvaW5jcmVtZW50KCkpCgogIHF1ZXN0aW9uSWQgSW50CgogIGNyZWF0ZWRBdCBEYXRlVGltZSBAZGVmYXVsdChub3coKSkKCiAgcXVlc3Rpb24gUXVlc3Rpb24gQHJlbGF0aW9uKGZpZWxkczogW3F1ZXN0aW9uSWRdLCByZWZlcmVuY2VzOiBbaWRdKQp9Cgptb2RlbCBBbnN3ZXIgewogIGlkICAgICAgICAgSW50IEBpZCBAZGVmYXVsdChhdXRvaW5jcmVtZW50KCkpCiAgcXVlc3Rpb25JZCBJbnQKCiAgdmFsdWUgU3RyaW5nCgogIGNyZWF0ZWRBdCBEYXRlVGltZSBAZGVmYXVsdChub3coKSkKICB1cGRhdGVkQXQgRGF0ZVRpbWUgQHVwZGF0ZWRBdAoKICBxdWVzdGlvbiBRdWVzdGlvbiAgICAgQHJlbGF0aW9uKGZpZWxkczogW3F1ZXN0aW9uSWRdLCByZWZlcmVuY2VzOiBbaWRdKQogIHZvdGVzICAgIEFuc3dlclZvdGVbXQp9Cgptb2RlbCBBbnN3ZXJWb3RlIHsKICBpZCBJbnQgQGlkIEBkZWZhdWx0KGF1dG9pbmNyZW1lbnQoKSkKCiAgYW5zd2VySWQgSW50CgogIGNyZWF0ZWRBdCBEYXRlVGltZSBAZGVmYXVsdChub3coKSkKICB1cGRhdGVkQXQgRGF0ZVRpbWUgQHVwZGF0ZWRBdAoKICBhbnN3ZXIgQW5zd2VyIEByZWxhdGlvbihmaWVsZHM6IFthbnN3ZXJJZF0sIHJlZmVyZW5jZXM6IFtpZF0pCn0K",
+  "inlineSchemaHash": "754c918e11ce46c836f2251ac745042b6180addb0e5938682e38e0652c5bda8c",
+  "noEngine": false
 }
 
 const fs = require('fs')
@@ -215,8 +224,6 @@ defineDmmfProperty(exports.Prisma, config.runtimeDataModel)
 
 
 
-
-
 const { warnEnvConflicts } = require('./runtime/library')
 
 warnEnvConflicts({
@@ -228,19 +235,21 @@ const PrismaClient = getPrismaClient(config)
 exports.PrismaClient = PrismaClient
 Object.assign(exports, Prisma)
 
-path.join(__dirname, "libquery_engine-debian-openssl-1.0.x.so.node");
-path.join(process.cwd(), "libs/lov-db/src/generated/client/libquery_engine-debian-openssl-1.0.x.so.node")
+// file annotations for bundling tools to include these files
+path.join(__dirname, "libquery_engine-darwin-arm64.dylib.node");
+path.join(process.cwd(), "libs/lov-db/src/generated/client/libquery_engine-darwin-arm64.dylib.node")
 
+// file annotations for bundling tools to include these files
 path.join(__dirname, "libquery_engine-linux-musl.so.node");
 path.join(process.cwd(), "libs/lov-db/src/generated/client/libquery_engine-linux-musl.so.node")
 
+// file annotations for bundling tools to include these files
 path.join(__dirname, "libquery_engine-linux-arm64-openssl-1.1.x.so.node");
 path.join(process.cwd(), "libs/lov-db/src/generated/client/libquery_engine-linux-arm64-openssl-1.1.x.so.node")
 
+// file annotations for bundling tools to include these files
 path.join(__dirname, "libquery_engine-debian-openssl-3.0.x.so.node");
 path.join(process.cwd(), "libs/lov-db/src/generated/client/libquery_engine-debian-openssl-3.0.x.so.node")
-
-path.join(__dirname, "libquery_engine-darwin-arm64.dylib.node");
-path.join(process.cwd(), "libs/lov-db/src/generated/client/libquery_engine-darwin-arm64.dylib.node")
+// file annotations for bundling tools to include these files
 path.join(__dirname, "schema.prisma");
 path.join(process.cwd(), "libs/lov-db/src/generated/client/schema.prisma")
