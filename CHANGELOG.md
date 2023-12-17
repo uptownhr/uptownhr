@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/uptownhr/uptownhr/compare/v1.4.2...v1.5.0) (2023-12-17)
+
+
+### Features
+
+* adding playwright ([476f46a](https://github.com/uptownhr/uptownhr/commit/476f46a28ad78e0f4f6cca943235025243cf3345))
+
 ## [1.4.2](https://github.com/uptownhr/uptownhr/compare/v1.4.1...v1.4.2) (2023-09-02)
 
 
