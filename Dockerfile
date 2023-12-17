@@ -61,7 +61,8 @@ COPY --from=build /app/libs/lov-db/src/generated/client/libquery_engine-debian-o
 COPY --from=build /app/litefs.yml /app/litefs.yml
 
 RUN yarn add prisma@^5
-RUN npx playwright install --with-deps firefox
+RUN npx playwright install
+RUN npx playwright install-deps
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
