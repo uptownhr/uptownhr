@@ -1,0 +1,51 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+</head>
+<body>
+<Header />
+<main>
+  <h1>🆕 now</h1>
+  <p>
+    Updated March 11th, 2024. This is a <a href="https://nownownow.com/about">now</a> page, and this is what I'm focused on right now.
+  </p>
+
+  <h2>Currently</h2>
+  <ul>
+    <li>Living in Glendora, CA</li>
+    <li>Working at <a target="_blank" href="https://www.bambee.com">Bambee</a>, Providing HR Support to Americas small business</li>
+  </ul>
+  <h2>Projects</h2>
+  <ul>
+    <li>Renovating my home for short-term rentals</li>
+    <li><a target="_blank" href="https://github.com/jaequery/ult">Ult</a>: The ultimate framework for rapid development</li>
+  </ul>
+  <h2>Ideas</h2>
+  <ul>
+    <li>Creating a TRPC interface adaptor for Nestjs</li>
+    <li>How to turn all devices into idle time worker nodes</li>
+  </ul>
+  <h2>Books</h2>
+  <ul>
+    <li>4th edition of the <a target="_blank" href="https://eloquentjavascript.net/">Eloquent JavaScript</a></li>
+  </ul>
+</main>
+<Footer />
+</body>
+</html>
+
+<style>
+    h1, h2 {
+        border-bottom: #eee 1px solid;
+    }
+</style>
