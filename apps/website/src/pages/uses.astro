@@ -1,0 +1,57 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+</head>
+<body>
+<Header />
+<main>
+  <h1>Software I use, gadgets I love and other things I recommend.</h1>
+  <p>
+    Here's a list of all of my favorite things I use to build software, stay productive, or buy.
+    Inspired by <a href="https://uses.tech/" target="_blank">uses.tech</a>
+  </p>
+
+  <h2>Technology Stack</h2>
+  <ul>
+    <li>Macbook Pro</li>
+    <li>macOS</li>
+    <li>Built-in Mac Terminal</li>
+    <li>Chrome</li>
+    <li>Linear</li>
+    <li>Notion</li>
+    <li>Slack</li>
+    <li>Google Workspace</li>
+    <li>Spotify</li>
+    <li>Netlify</li>
+    <li>Cloudflare</li>
+    <li>Fly.io</li>
+    <li>Webstorm</li>
+    <li>Github</li>
+    <li>Github CoPilot</li>
+    <li>Javascript</li>
+    <li>Typescript</li>
+    <li>Node.js</li>
+    <li>Nest.js</li>
+    <li>Vue.js</li>
+    <li>Astro</li>
+  </ul>
+</main>
+<Footer />
+</body>
+</html>
+
+<style>
+    h1, h2 {
+        border-bottom: #eee 1px solid;
+    }
+</style>
