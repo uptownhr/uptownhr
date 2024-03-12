@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/uptownhr/uptownhr/compare/v1.5.6...v1.6.0) (2024-03-12)
+
+
+### Features
+
+* added a now page ([3109a1e](https://github.com/uptownhr/uptownhr/commit/3109a1eb56a5f6b98e64f949f02dd5e70f74cfee))
+
 ## [1.5.6](https://github.com/uptownhr/uptownhr/compare/v1.5.5...v1.5.6) (2023-12-17)
 
 
