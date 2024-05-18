@@ -1,5 +1,5 @@
 ---
-layout: "../../layouts/BlogPost.astro"
+layout: "../../../layouts/BlogPost.astro"
 title: "Jest and Mocking with Typescript - Jest Extended Mocks"
 description: "Lorem ipsum dolor sit amet"
 pubDate: "May 17 2024"
