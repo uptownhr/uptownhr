@@ -5,12 +5,13 @@ description: "Lorem ipsum dolor sit amet"
 pubDate: "May 17 2024"
 heroImage: "/jest.jpg"
 ---
-If you are writing tests in a Typescript and aren't utilizing the Jest Mock Extended library, 
-you are missing out on a fantastic testing experience and doing it the hard way. The [jest-mock-extended](https://www.npmjs.com/package/jest-mock-extended) library 
+If you are writing tests in Typescript and aren't utilizing the Jest Mock Extended library, 
+you are missing out on a fantastic testing experience and doing it the hard way. 
+The [jest-mock-extended](https://www.npmjs.com/package/jest-mock-extended) library 
 provides the `mock` test utility. This utility helps create mocks that are typescript friendly,
-so types do not get in the way of writing your testing. 
+so types do not get in the way of writing your tests. 
 
-Often when writing a test, you have specific objects and properties that your test cares about. 
+Often when writing a test, you have specific objects and properties that are critical to the test. 
 The `mock` utility allows you to create a mock object with just the properties you care about and nothing else. 
 This saves you time by not having to create a full mock object.
 
