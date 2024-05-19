@@ -1,7 +1,8 @@
 ---
 layout: "../../layouts/BlogPost.astro"
 title: "Jest Mock Extended - Writing Typescript Friendly Tests"
-description: "Lorem ipsum dolor sit amet"
+description: "If you are writing tests in Typescript and aren't utilizing the Jest Mock Extended library, 
+you are missing out on a fantastic testing experience and doing it the hard way."
 pubDate: "May 17 2024"
 heroImage: "/jest.jpg"
 ---
