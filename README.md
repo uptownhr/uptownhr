@@ -12,6 +12,7 @@ This is a monorepo with NX for with the following projects
 
 ## NX Cheat Sheat
 - Create a new astro app `nx g @nxtensions/astro:app {name}`
+- Create a new nest library `nx g library {name}`
 - Generate Prisma client for app `nx g @nx-tools/nx-prisma:generate {name}`
 
 ## Todo

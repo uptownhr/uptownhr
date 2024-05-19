@@ -10,17 +10,34 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2021", "dom"],
+    "lib": [
+      "es2021",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@uptownhr/auth-module": ["libs/auth-module/src/index.ts"],
-      "@uptownhr/backend-module": ["apps/backend/src/app/backend.module.ts"],
-      "@uptownhr/lov-db": ["libs/lov-db/src/index.ts"],
-      "@uptownhr/lov-schema": ["libs/lov-schema/src/index.ts"]
+      "@uptownhr/auth-module": [
+        "libs/auth-module/src/index.ts"
+      ],
+      "@uptownhr/backend-module": [
+        "apps/backend/src/app/backend.module.ts"
+      ],
+      "@uptownhr/crm": [
+        "libs/crm/src/index.ts"
+      ],
+      "@uptownhr/lov-db": [
+        "libs/lov-db/src/index.ts"
+      ],
+      "@uptownhr/lov-schema": [
+        "libs/lov-schema/src/index.ts"
+      ]
     },
     "strictNullChecks": true
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

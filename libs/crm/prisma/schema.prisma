@@ -1,0 +1,22 @@
+generator client {
+  provider      = "prisma-client-js"
+  output        = "../src/generated/client"
+  binaryTargets = ["native", "linux-musl", "linux-arm64-openssl-1.1.x", "debian-openssl-3.0.x", "darwin-arm64"]
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("CRM_DATABASE_URL")
+}
+
+model Person {
+  id String @id @default(cuid())
+}
+
+model PersonAttribute {
+  id       String @id @default(cuid())
+  person   Person @relation(fields: [personId], references: [id])
+  personId String
+  key      String
+  value    String
+}

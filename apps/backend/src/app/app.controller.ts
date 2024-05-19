@@ -34,6 +34,15 @@ export class AppController {
     private readonly lovDb: LovDb,
   ) {}
 
+  @Get('health')
+  async health() {
+    const test = await this.lovDb.$queryRaw`SELECT 1`;
+
+    return {
+      status: !!test,
+    };
+  }
+
   @Get()
   @UseGuards(new AuthGuard())
   getData() {
