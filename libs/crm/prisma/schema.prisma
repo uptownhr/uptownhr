@@ -10,7 +10,8 @@ datasource db {
 }
 
 model Person {
-  id String @id @default(cuid())
+  id              String            @id @default(cuid())
+  PersonAttribute PersonAttribute[]
 }
 
 model PersonAttribute {
