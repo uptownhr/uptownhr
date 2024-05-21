@@ -8426,7 +8426,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fflate@npm:^0.4.1":
+"fflate@npm:^0.4.8":
   version: 0.4.8
   resolution: "fflate@npm:0.4.8"
   checksum: 29d8cbe44d5e7f53e7f5a160ac7f9cc025480c7b3bfd85c5f898cbe20dfa2dad4732daa534982664bf30b35896a90af44ea33ede5d94c5ffd1b8b0c0a0a56ca2
@@ -13642,12 +13642,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"posthog-js@npm:^1.42.2":
-  version: 1.77.2
-  resolution: "posthog-js@npm:1.77.2"
+"posthog-js@npm:^1.132.0":
+  version: 1.132.0
+  resolution: "posthog-js@npm:1.132.0"
   dependencies:
-    fflate: ^0.4.1
-  checksum: ddbfa59c2c1c8b2efd1fb5089d636c34f3099b3fbf090441ee745f119a5a9a09ba3c6391675f09b98cce6e40e18676abbf067d510b5340ac51ed72c22d477725
+    fflate: ^0.4.8
+    preact: ^10.19.3
+  checksum: 191b748126c4b57b1562134431f4f786c07a570d37458e8626504695ead4dc29331640536c329531c1081b72f7c2298875e8b7682e136829e4bf1e82d0af98ab
+  languageName: node
+  linkType: hard
+
+"preact@npm:^10.19.3":
+  version: 10.22.0
+  resolution: "preact@npm:10.22.0"
+  checksum: 1b7493abec35d5042094d652e5cb980de00a0ef39e130b2f20485214d273ef0cebafa2000aa9fa4ef9dad952bd4e746ad3714f42206f34b817fd3712d0d70bcd
   languageName: node
   linkType: hard
 
@@ -16375,7 +16383,7 @@ __metadata:
     libs: ^0.1.2
     nx: ^16.0.0
     playwright: ^1.40.1
-    posthog-js: ^1.42.2
+    posthog-js: ^1.132.0
     prettier: ^3.0.0
     prettier-plugin-svelte: ^3.0.0
     prisma: ^5.1.1
