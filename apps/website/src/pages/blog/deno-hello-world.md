@@ -5,11 +5,11 @@ description: "What you can get done in a day with Deno"
 pubDate: "May 25 2024"
 heroImage: "/placeholder-hero.jpg"
 ---
-I've been following and giving Deno a shot from time to time. Today I'm going to give it a shot and write it about it 
-from the perspective of writing a tutorial for someone who is new to programming. Node and Bun also exists but I'm
-specifically choosing Deno because 1, I want to compare against node, 2 because Deno comes with `deno deploy` and that 
-greatly simplifies bringing your code to life on the web.
-
+I've been following and giving Deno a shot from time to time. In this post, I'm going to explore what getting started
+with Deno looks like, and I am writing a tutorial for someone who is new to programming. I am however assuming minimal
+experience with Javascript/Typescript and will not cover syntax. Deno has also specifically been chosen because 
+it comes with the command `deno deploy` and allows you to deploy your code to the cloud without any infrastructure
+knowledge. 
 
 ## First What is Deno?
 Deno is a runtime for JavaScript and TypeScript that is based on the V8 JavaScript engine and the Rust programming language.
@@ -30,17 +30,21 @@ and for Windows `iwr https://deno.land/x/install/install.ps1 | iex`
 ````
 
 ## Hello World
-The simpliest form of hello world that everyone knows. Let's make our program log out `hello world`. 
+The simplest form of hello world that everyone knows. Let's make our program log out `hello world`. 
 
-### Step 1: Create a new file called `hello.ts` 
-From your terminal create a new file called `hello.ts` and open it in your favorite editor.
-
-### Step 2: Write a Console statement to say hello world
-```typescript
-console.log("Hello, World!");
+### Step 1: Initialize a new project
+```bash
+deno init hello-world
+cd hello-world
 ```
 
-### Step 3: Run the program
+### Step 2: Start developer mode
+Running this command will start a file watcher that will run your program everytime you save a file.
 ```bash
-deno run hello.ts
+deno task dev
+```
+
+### Step 3: Open main.ts and write a console statement to say hello world
+```typescript
+console.log('Hello, World!'); // you should now see Hello, World! in your terminal
 ```
