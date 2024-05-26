@@ -115,8 +115,8 @@ View at:
  - https://uptownhr-uptownhr.deno.dev
 ```
 Note the 2 view at links. One is a snapshot of the deployment you've just performed, and the other is the current live
-version of your website. In the future, when you make further deployments, the live link with the weird characters will
-will be updated with the new deployment.
+version of your website. In the future, when you make further deployments you'll get a new snapshot link, and you will
+have to explicitly decide to update the live site by adding in `--prod` to the deploy command. ie: `deployctl deploy --prod`.
 
 Click and visit either one of these links and you should see `hello world` in your browser. Because this is in the cloud,
 you can share this link with any of your friends and they will be able to see your website. 
