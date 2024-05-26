@@ -1,5 +1,7 @@
-// Learn more at https://deno.land/manual/examples/module_metadata#concepts
+Deno.serve({ port: 8000 }, (): Response => {
+  const body = `hello world`;
 
-if (import.meta.main) {
-  console.log('Hello World!');
-}
+  console.log('body', body);
+
+  return new Response(body, { status: 200 });
+});
