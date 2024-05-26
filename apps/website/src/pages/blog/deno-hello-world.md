@@ -9,7 +9,9 @@ I've been following and giving Deno a shot from time to time. In this post, I'm 
 with Deno looks like, and I am writing a tutorial for someone who is new to programming. I am however assuming minimal
 experience with Javascript/Typescript and will not cover syntax. Deno has also specifically been chosen because 
 it comes with the command `deployctl` and allows you to deploy your code to the cloud without any infrastructure
-knowledge. 
+knowledge.
+
+Source code example can be found here [Deno Hello World](https://github.com/uptownhr/uptownhr/tree/main/apps/deno-hello-world).
 
 ## First What is Deno?
 Deno is a runtime for JavaScript and TypeScript that is based on the V8 JavaScript engine and the Rust programming language.
