@@ -122,3 +122,5 @@ Click and visit either one of these links and you should see `hello world` in yo
 you can share this link with any of your friends and they will be able to see your website. 
 
 Congrats! You are now live!
+
+## Part 2 coming soon: Hello World on Social Media, with a database and AI
