@@ -3,7 +3,7 @@ layout: "../../layouts/BlogPost.astro"
 title: "Day 1 - Hello World with Deno"
 description: "What you can get done in a day with Deno"
 pubDate: "May 25 2024"
-heroImage: "/placeholder-hero.jpg"
+heroImage: "/deno-hello-world.jpeg"
 ---
 I've been following and giving Deno a shot from time to time. In this post, I'm going to explore what getting started
 with Deno looks like, and I am writing a tutorial for someone who is new to programming. I am however assuming minimal
