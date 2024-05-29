@@ -69,7 +69,7 @@ Deno.serve({ port: 8000 }, (): Response => {
 });
 ```
 
-Because we are now start a server that exposes itself to the network, we need to run the program with the 
+Because we have now started a server that exposes itself to the network, we need to run the program with the 
 `--allow-net` flag. You'll notice that you are now prompted to allow network access in the terminal. 
 
 ```bash
