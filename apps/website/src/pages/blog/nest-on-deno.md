@@ -1,7 +1,7 @@
 ---
 layout: '../../layouts/BlogPost.astro'
 title: 'NestJS on Deno?'
-description: "Can you run NestJS in Deno? Let's find out."
+description: "Running NestJS on Deno (Yes, It's Possible!)"
 pubDate: 'June 12 2024'
 heroImage: '/nest-hello-deno.jpeg'
 ---
@@ -12,7 +12,7 @@ Yes.
 
 I'm writing this because google searches aren't very clear and almost made me
 believe it won't work. I almost believed I would have to use a Deno flavored
-framework that mimics Nestjs (like oak).
+framework that mimics Nestjs (like [oak](https://deno.land/x/oak@v16.1.0)).
 
 However, it's straight forward to use and arguably simpler in Deno because you
 can get started without Nest's CLI and it's generation requirements. Given that
