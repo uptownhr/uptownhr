@@ -233,7 +233,7 @@ The full `main.ts` file should look like this:
 
 ```typescript
 import { NestFactory } from '@nestjs/core';
-import { Get, Module } from '@nestjs/common';
+import { Get, Module, Controller } from '@nestjs/common';
 import '@nestjs/platform-express';
 
 class HelloService {
@@ -242,6 +242,7 @@ class HelloService {
   }
 }
 
+@Controller()
 class HelloController {
   constructor(private helloService: HelloService) {}
 
