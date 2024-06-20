@@ -251,7 +251,7 @@ class HelloController {
   }
 }
 
-@Module({ providers: [HelloService] })
+@Module({ providers: [HelloService], controllers: [HelloController] })
 class AppModule {}
 const app = await NestFactory.create(AppModule);
 app.listen(3000);
