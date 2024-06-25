@@ -5,7 +5,7 @@ description:
   'Exploring the Fresh framework in Deno to build Lov.io, a human-readable URL
   shortener.'
 pubDate: 'June 25 2024'
-heroImage: '/deno-hello-world.jpeg'
+heroImage: '/deno-fresh-lov-io.jpg'
 ---
 
 After experimenting with Deno, I embarked on a project to address a common
