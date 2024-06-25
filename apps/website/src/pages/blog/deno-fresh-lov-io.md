@@ -72,7 +72,8 @@ Very little setup/configuration was needed.
 Now, NextJS + Vercel also started offering Postgres and technically offers an
 under one umbrella solution. However, Postgres is through a partnership
 integration and requires setup that isn't built-in to the language. For example,
-`deno kv` can be utilized by `const kv = await Deno.openKv();`
+`deno kv` can be utilized by `const kv = await Deno.openKv();` and this just
+works locally or in Deno Cloud.
 
 Checkout out the 3 files that make up the project:
 
