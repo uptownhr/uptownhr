@@ -73,3 +73,13 @@ Now, NextJS + Vercel also started offering Postgres and technically offers an
 under one umbrella solution. However, Postgres is through a partnership
 integration and requires setup that isn't built-in to the language. For example,
 `deno kv` can be utilized by `const kv = await Deno.openKv();`
+
+Checkout out the 3 files that make up the project:
+
+- [index.tsx](https://github.com/uptownhr/tiny-url/blob/a334f68eaab70c3e6e589479a8a54074692448dd/routes/index.tsx#L1-L0) -
+  the home page and form to create a short link
+- [name.tsx](https://github.com/uptownhr/tiny-url/blob/81b3380ac4df2537bf7b0fe12d8c743a6f451855/routes/%5Bname%5D.tsx#L1-L32) -
+  the route that either redirects to the defined link or shows a list of
+  referenced links
+- [repository.ts](https://github.com/uptownhr/tiny-url/blob/de486297bdf41e8b5ed8dda57c24868143e9ea3e/repository.ts#L1-L80) -
+  the database layer that stores and retrieves the links
