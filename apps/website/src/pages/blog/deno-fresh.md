@@ -79,12 +79,225 @@ integration and requires setup that isn't built-in to the language. For example,
 `deno kv` can be utilized by `const kv = await Deno.openKv();` and this just
 works locally or in Deno Cloud.
 
-Checkout out the 3 files that make up the project:
+### Checkout out the 3 files that make up the project:
 
-- [index.tsx](https://github.com/uptownhr/zap/blob/a334f68eaab70c3e6e589479a8a54074692448dd/routes/index.tsx#L1-L0) -
-  the home page and form to create a short link
-- [name.tsx](https://github.com/uptownhr/zap/blob/81b3380ac4df2537bf7b0fe12d8c743a6f451855/routes/%5Bname%5D.tsx#L1-L32) -
-  the route that either redirects to the defined link or shows a list of
-  referenced links
-- [repository.ts](https://github.com/uptownhr/zap/blob/de486297bdf41e8b5ed8dda57c24868143e9ea3e/repository.ts#L1-L80) -
-  the database layer that stores and retrieves the links
+#### [index.tsx](https://github.com/uptownhr/zap/blob/a334f68eaab70c3e6e589479a8a54074692448dd/routes/index.tsx#L1-L0)
+
+the home page and form to create a short link
+
+```tsx
+import { RedirectRepository } from '../repository.ts';
+import { Handlers, PageProps } from '$fresh/server.ts';
+
+const repo = new RedirectRepository();
+
+export interface CreateRedirect {
+  name: string;
+  url: string;
+}
+
+export const handler: Handlers = {
+  async POST(req, ctx) {
+    const form = await req.formData();
+
+    const data: CreateRedirect = {
+      name: form.get('name')?.toString() || '',
+      url: form.get('url')?.toString() || '',
+    };
+
+    try {
+      const testUrl = new URL(data.url);
+    } catch (e) {
+      return new Response('Invalid URL', { status: 400 });
+    }
+
+    const response = await repo.create(data);
+
+    // Redirect user to thank you page.
+    const headers = new Headers();
+    headers.set('location', `/?created=${ctx.url.origin}/${response.name}`);
+
+    return new Response(null, {
+      headers,
+      status: 303, // See Other
+    });
+  },
+};
+
+export default function Home(props: PageProps) {
+  return (
+    ...
+          <form className="space-y-6" action="#" method="POST">
+            arc
+            <div>
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                Tiny Url Name
+              </label>
+              <div className="mt-2">
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  /*placeholder="my tech talk"*/
+                />
+              </div>
+            </div>
+            <div>
+              <div className="flex items-center justify-between">
+                <label
+                  htmlFor="url"
+                  className="block text-sm font-medium leading-6 text-gray-900"
+                >
+                  Redirect Link
+                </label>
+              </div>
+              <div className="mt-2">
+                <input
+                  id="url"
+                  name="url"
+                  type="text"
+                  required
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+            <div>
+              <button
+                type="submit"
+                className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                Create Link
+              </button>
+            </div>
+          </form>
+    ...
+  );
+}
+```
+
+#### [name.tsx](https://github.com/uptownhr/zap/blob/81b3380ac4df2537bf7b0fe12d8c743a6f451855/routes/%5Bname%5D.tsx#L1-L32)
+
+the route that either redirects to the defined link or shows a list of
+referenced links
+
+```tsx
+import { defineRoute } from '$fresh/server.ts';
+import { RedirectRepository } from '../repository.ts';
+import { format } from 'date-fns';
+
+const repo = new RedirectRepository();
+
+export class RedirectModel {
+  url: string;
+  created: Date;
+}
+
+export default defineRoute(async (req, ctx) => {
+  const list: RedirectModel[] = await repo.list(ctx.params.name);
+
+  if (list.length === 1) {
+    return Response.redirect(list[0].url, 307);
+  } else if (list.length === 0) {
+    return new Response('Not found', { status: 404 });
+  }
+
+  return (
+    <ul>
+      {list.map((item) => (
+        <li>
+          <a href={item.url}>
+            {format(item.created, 'yyyy-M-d')} - {item.url}
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+});
+```
+
+#### [repository.ts](https://github.com/uptownhr/zap/blob/de486297bdf41e8b5ed8dda57c24868143e9ea3e/repository.ts#L1-L80)
+
+the database layer that stores and retrieves the links
+
+```ts
+import { RedirectModel } from './routes/[name].tsx';
+import { CreateRedirect } from './routes/index.tsx';
+import slugify from 'slugify';
+import KvKey = Deno.KvKey;
+
+const kv = await Deno.openKv();
+
+type RedirectUrl = string;
+interface ParsedId {
+  kvKey: string;
+  created: number;
+  name: string;
+}
+
+export class RedirectRepository {
+  kvKey = 'redirects';
+
+  constructor() {}
+
+  async create({ name, url }: CreateRedirect) {
+    const id = this.createId(this.kvKey, name);
+
+    const created = await kv.set(id, url);
+
+    const res = await kv.get<RedirectUrl>([...id]);
+
+    if (res.value === null) {
+      throw new Error('Failed to create redirect');
+    }
+
+    const parsed = this.parseId(res.key);
+
+    return {
+      url: res.value,
+      name: parsed.name,
+      created: new Date(parsed.created),
+    };
+  }
+
+  async list(name?: string): Promise<RedirectModel[]> {
+    const search = [this.kvKey.toLowerCase()];
+
+    if (name) {
+      search.push(name.toLowerCase());
+    }
+
+    const entries = kv.list<RedirectUrl>({ prefix: search });
+
+    const result: RedirectModel[] = [];
+
+    for await (const entry of entries) {
+      const parsed = this.parseId(entry.key);
+      result.unshift({
+        url: entry.value,
+        created: new Date(parsed.created),
+      });
+    }
+
+    return result;
+  }
+
+  private createId(kvKey: string, name: string): [string, string, number] {
+    const slug = slugify(name, { lower: true });
+
+    return [kvKey.toLowerCase(), slug, Date.now()];
+  }
+
+  private parseId(id: KvKey): ParsedId {
+    return {
+      kvKey: id[0] as string,
+      name: id[1] as string,
+      created: id[2] as number,
+    };
+  }
+}
+```
