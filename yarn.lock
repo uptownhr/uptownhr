@@ -13643,12 +13643,13 @@ __metadata:
   linkType: hard
 
 "posthog-js@npm:^1.132.0":
-  version: 1.132.0
-  resolution: "posthog-js@npm:1.132.0"
+  version: 1.142.1
+  resolution: "posthog-js@npm:1.142.1"
   dependencies:
     fflate: ^0.4.8
     preact: ^10.19.3
-  checksum: 191b748126c4b57b1562134431f4f786c07a570d37458e8626504695ead4dc29331640536c329531c1081b72f7c2298875e8b7682e136829e4bf1e82d0af98ab
+    web-vitals: ^4.0.1
+  checksum: cb7e3f508572282563ac72b1d9ed9e3002465c4fe20b520f09faec78db2ceb268a88260e347343f43b48dfdfafc2e0150780a57102a4f8d540d71fbadfca6693
   languageName: node
   linkType: hard
 
@@ -16786,6 +16787,13 @@ __metadata:
   version: 2.0.1
   resolution: "web-namespaces@npm:2.0.1"
   checksum: b6d9f02f1a43d0ef0848a812d89c83801d5bbad57d8bb61f02eb6d7eb794c3736f6cc2e1191664bb26136594c8218ac609f4069722c6f56d9fc2d808fa9271c6
+  languageName: node
+  linkType: hard
+
+"web-vitals@npm:^4.0.1":
+  version: 4.2.0
+  resolution: "web-vitals@npm:4.2.0"
+  checksum: 7afac4f4206fb33609bd60c58dbbd57cf001cc806179c9814bab839ced7f0b681f1f8712c2aa2623f9b32748ab122b63c52e292aef67c8eacfd77e83edbdc9c1
   languageName: node
   linkType: hard
 
