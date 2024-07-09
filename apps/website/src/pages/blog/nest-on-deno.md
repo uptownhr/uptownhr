@@ -260,3 +260,17 @@ app.listen(3000);
 
 Now verify that the new endpoint is working by visiting `http://localhost:3000`.
 You'll see the message `Hello World!` displayed on the page.
+
+## Update: 2024-07-09
+
+After writing this, I attempted to publish my hello world script to Deno Cloud
+through Deploy Ctl. I encountered issues with the deployment, which led me to
+explore other frameworks like Fresh. I've written about my experience with Fresh
+in my latest blog post,
+[A URL Shortener built for humans with Deno and Fresh](https://uptownhr.com/blog/deno-fresh).
+
+The bug though was posted on the Deno Deploy Github repo. You can follow the
+issue [here](https://github.com/denoland/deploy_feedback/issues/680). Since the
+writing of this post, the issue is now resolved and you can deploy NestJS apps
+to Deno Cloud. The issue was that Deno Cloud's runtime did not have
+`emitDecoratorMetadata` enabled and this caused the DI to fail.
