@@ -4,11 +4,6 @@
   "version": "1.6.0",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
     "frontend": "nx run website:dev",
     "backend": "nx serve backend",
     "backend:production": "nx run backend:serve:production"
