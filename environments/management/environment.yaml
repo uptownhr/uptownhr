@@ -1,0 +1,7 @@
+environment: management
+aws_account_id: "920230446227"
+aws_profile: management-superuser
+pf_stack_version: main
+tf_state_bucket: tf-management-7ari0sfz
+tf_state_lock_table: tf-management-7ari0sfz
+tf_state_region: us-east-2

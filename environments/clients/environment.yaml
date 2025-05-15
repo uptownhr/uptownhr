@@ -1,0 +1,7 @@
+environment: clients
+aws_account_id: "986063559855"
+aws_profile: clients-superuser
+pf_stack_version: main
+tf_state_bucket: tf-clients-xyjb44yq
+tf_state_lock_table: tf-clients-xyjb44yq
+tf_state_region: us-east-2

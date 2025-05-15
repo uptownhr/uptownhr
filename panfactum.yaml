@@ -1,0 +1,7 @@
+# These are the standard repo variables required by
+# https://panfactum.com/docs/reference/repo-variables
+
+repo_url: git::https://github.com/uptownhr/uptownhr.git
+repo_name: uptownhr
+repo_primary_branch: main
+installation_id: 8ef0727d-ec53-4370-844f-867fae87e751

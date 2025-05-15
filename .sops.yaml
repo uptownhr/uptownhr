@@ -1,0 +1,7 @@
+creation_rules:
+  - path_regex: .*/management/.*
+    aws_profile: management-superuser
+    kms: arn:aws:kms:us-east-2:920230446227:key/mrk-d978b90fa29e47aabc40271596eff4e0,arn:aws:kms:us-east-1:920230446227:key/mrk-d978b90fa29e47aabc40271596eff4e0
+  - path_regex: .*/clients/.*
+    aws_profile: clients-superuser
+    kms: arn:aws:kms:us-east-2:986063559855:key/mrk-6d6c8d89054f43fc890b754e8893063b,arn:aws:kms:us-east-1:986063559855:key/mrk-6d6c8d89054f43fc890b754e8893063b

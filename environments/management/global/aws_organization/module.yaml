@@ -1,0 +1,13 @@
+extra_inputs:
+  primary_contact:
+    full_name: James Lee
+    phone_number: +1 323-213-9797
+    address_line_1: 541 Fountain Springs Lane
+    city: Glendora
+    country_code: US
+    postal_code: "91741"
+    state_or_region: CA
+  accounts:
+    uptownhr-clients:
+      name: uptownhr-clients
+      email: uptownhr+clients@gmail.com
