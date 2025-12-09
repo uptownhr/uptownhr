@@ -195,23 +195,42 @@ I'm currently working on:
 
 If you use Claude Code and want to try Lattice:
 
-1. Install the CLI (used by Claude Code agents):
+### 1. Install the CLI
+
 ```bash
 bun add -g @zabaca/lattice
 ```
 
-2. Add the slash commands to your Claude Code project (see the [repo](https://github.com/Zabaca/lattice) for command definitions)
+### 2. Initialize Lattice
 
-3. Start researching:
+```bash
+lattice init
+```
+
+This single command sets up everything:
+- **Slash commands**: Installs `/research`, `/entity-extract`, `/graph-sync` into your `.claude/commands/` directory
+- **Docs directory**: Creates `~/.lattice/docs/` for your research documentation
+- **Environment**: Prompts for your Voyage AI API key (for semantic embeddings)
+- **DuckDB graph**: Initializes the local graph database
+
+### 3. Start Researching
+
+Now you can use the slash commands in Claude Code:
+
 ```
 /research your topic here
 ```
 
-4. Extract and sync:
+### 4. Extract and Sync
+
+After creating documentation:
+
 ```
 /entity-extract path/to/doc.md
 /graph-sync
 ```
+
+That's it - your knowledge graph is ready to use.
 
 Source code: [github.com/Zabaca/lattice](https://github.com/Zabaca/lattice)
 
