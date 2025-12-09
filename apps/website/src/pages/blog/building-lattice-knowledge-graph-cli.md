@@ -90,35 +90,23 @@ Claude Code then:
 - Creates well-structured markdown files with proper frontmatter
 - Organizes files in topic directories (`~/.lattice/docs/{topic}/`)
 
-### 2. Extract Entities with `/entity-extract`
+### 2. Sync to Graph with `/graph-sync`
 
-Once a document is ready, I extract entities:
-
-```
-/entity-extract ~/.lattice/docs/embedding-models/voyage-vs-openai.md
-```
-
-Claude Haiku analyzes the document and extracts:
-- **Entities**: Tools, concepts, people, decisions
-- **Relationships**: How entities connect to each other
-- **Attributes**: Metadata about each entity
-
-The entities are written directly to the document's YAML frontmatter, where I can review and edit them.
-
-### 3. Sync to Graph with `/graph-sync`
-
-When I'm happy with the extractions:
+After creating or updating documentation, I sync everything to the knowledge graph:
 
 ```
 /graph-sync
 ```
 
-This command:
-- Finds all modified documents with entity frontmatter
-- Syncs entities and relationships to the DuckDB graph
-- Updates embeddings for semantic search
+This single command handles the entire pipeline:
+- **Detects modified documents** that need entity extraction
+- **Extracts entities** using Claude Haiku (tools, concepts, decisions, relationships)
+- **Writes entities to YAML frontmatter** where you can review them
+- **Syncs to the DuckDB graph** with semantic embeddings
 
-### 4. Semantic Search
+The key insight: you don't need to manually call entity extraction. `/graph-sync` handles it all - detecting what changed, extracting entities, and syncing to the graph in one step.
+
+### 3. Semantic Search
 
 Now the knowledge graph powers search across all my documentation. When I ask Claude Code a question, it can search the graph for related concepts, past decisions, and connected documents.
 
@@ -129,7 +117,7 @@ The key insight is that **the user experience is the Claude Code conversation**,
 This means:
 - **Natural language interface**: Just talk to Claude about what you want to research
 - **Contextual suggestions**: Claude can suggest related documents and entities
-- **Seamless workflow**: Research, extract, sync - all without leaving your conversation
+- **Seamless workflow**: Research and sync - all without leaving your conversation
 
 ## Technical Architecture
 
@@ -140,11 +128,10 @@ This means:
 │                                                                     │
 │   User                     Claude Code                   Backend    │
 │   ┌─────────┐             ┌──────────┐              ┌─────────┐    │
-│   │ /research│ ─────────▶ │  Slash   │ ──────────▶  │ Lattice │    │
-│   │ /entity- │            │ Commands │              │   CLI   │    │
-│   │  extract │            │          │              │         │    │
-│   │ /graph-  │            │          │              │         │    │
-│   │  sync    │            │          │              │         │    │
+│   │/research│ ─────────▶  │  Slash   │ ──────────▶  │ Lattice │    │
+│   │         │             │ Commands │              │   CLI   │    │
+│   │/graph-  │             │          │              │         │    │
+│   │  sync   │             │          │              │         │    │
 │   └─────────┘             └──────────┘              └─────────┘    │
 │        │                       │                         │         │
 │        │                       ▼                         ▼         │
@@ -166,7 +153,7 @@ This means:
 
 ### Key Components
 
-1. **Slash Commands**: `/research`, `/entity-extract`, `/graph-sync` - the user interface
+1. **Slash Commands**: `/research` and `/graph-sync` - the user interface
 2. **Lattice CLI** (`@zabaca/lattice`): Backend for Claude Code agents
 3. **Extractor**: Uses Claude Haiku for entity extraction
 4. **Graph Store**: DuckDB with VSS extension for vector search
@@ -208,7 +195,7 @@ lattice init
 ```
 
 This single command sets up everything:
-- **Slash commands**: Installs `/research`, `/entity-extract`, `/graph-sync` into your `.claude/commands/` directory
+- **Slash commands**: Installs `/research` and `/graph-sync` into your `.claude/commands/` directory
 - **Docs directory**: Creates `~/.lattice/docs/` for your research documentation
 - **Environment**: Prompts for your Voyage AI API key (for semantic embeddings)
 - **DuckDB graph**: Initializes the local graph database
@@ -221,12 +208,11 @@ Now you can use the slash commands in Claude Code:
 /research your topic here
 ```
 
-### 4. Extract and Sync
+### 4. Sync to Graph
 
-After creating documentation:
+After creating documentation, sync it to the knowledge graph:
 
 ```
-/entity-extract path/to/doc.md
 /graph-sync
 ```
 
