@@ -1,14 +1,14 @@
 ---
 layout: '../../layouts/BlogPost.astro'
-title: 'Building Lattice: A Knowledge Graph CLI for Your Documentation'
-description: 'How I built Lattice, a human-initiated knowledge graph system that turns markdown documentation into searchable, connected knowledge'
+title: 'Building Lattice: A Knowledge Graph for Claude Code'
+description: 'How I built Lattice, a human-initiated knowledge graph system that integrates with Claude Code to turn markdown documentation into searchable, connected knowledge'
 pubDate: 'Dec 08 2025'
 heroImage: '/lattice-hero.png'
 ---
 
 I've been deep into AI-assisted development with Claude Code, and one thing became clear: AI assistants work best when they have context. But context scattered across dozens of markdown files is hard to search and even harder to connect.
 
-So I built [Lattice](https://github.com/Zabaca/lattice) - a knowledge graph CLI that turns your documentation into searchable, connected knowledge.
+So I built [Lattice](https://github.com/Zabaca/lattice) - a knowledge graph that integrates directly with Claude Code through slash commands, turning your documentation into searchable, connected knowledge.
 
 ## The Problem with Documentation
 
@@ -31,18 +31,7 @@ Most knowledge graph tools (like GraphRAG or LightRAG) use a "pipeline-auto" app
 - No review before committing to the graph
 - Hidden extraction quality issues
 
-Lattice takes a different approach: **human-initiated extraction**. You decide when to extract entities, you can review what was extracted, and you commit changes to your graph explicitly.
-
-```bash
-# Extract entities from a document
-lattice extract docs/architecture/authentication.md
-
-# Review what was extracted (entities stored in YAML frontmatter)
-cat docs/architecture/authentication.md
-
-# Sync to the graph when you're ready
-lattice sync
-```
+Lattice takes a different approach: **human-initiated extraction**. You decide when to extract entities, you can review what was extracted, and you commit changes to your graph explicitly - all through Claude Code commands.
 
 ### Entities in YAML Frontmatter
 
@@ -83,20 +72,30 @@ DuckDB gives us:
 - Vector search via VSS extension
 - Single file storage (no Docker, no servers)
 
-## The Workflow
+## The Workflow: Claude Code Slash Commands
 
-Here's how I use Lattice with my research documentation:
+The primary interface for Lattice is through **Claude Code slash commands**. Here's my typical workflow:
 
-### 1. Create Documentation
+### 1. Research a Topic with `/research`
 
-I use Claude Code's `/research` command to create new research documents. These are standard markdown files organized by topic.
+When I want to research something, I use the `/research` command in Claude Code:
 
-### 2. Extract Entities
+```
+/research embedding models comparison
+```
 
-When a document is ready, I run entity extraction:
+Claude Code then:
+- Searches existing documentation for related content
+- Asks if I want to create new research or update existing docs
+- Creates well-structured markdown files with proper frontmatter
+- Organizes files in topic directories (`~/.lattice/docs/{topic}/`)
 
-```bash
-lattice extract docs/embedding-models/voyage-vs-openai.md
+### 2. Extract Entities with `/entity-extract`
+
+Once a document is ready, I extract entities:
+
+```
+/entity-extract ~/.lattice/docs/embedding-models/voyage-vs-openai.md
 ```
 
 Claude Haiku analyzes the document and extracts:
@@ -104,72 +103,74 @@ Claude Haiku analyzes the document and extracts:
 - **Relationships**: How entities connect to each other
 - **Attributes**: Metadata about each entity
 
-### 3. Review and Edit
+The entities are written directly to the document's YAML frontmatter, where I can review and edit them.
 
-The extracted entities appear in the document's frontmatter. I can:
-- Fix misidentified entities
-- Add missing relationships
-- Remove irrelevant extractions
+### 3. Sync to Graph with `/graph-sync`
 
-### 4. Sync to Graph
+When I'm happy with the extractions:
 
-Once I'm happy with the extractions:
-
-```bash
-lattice sync
+```
+/graph-sync
 ```
 
-This updates the DuckDB graph with the new entities and relationships.
+This command:
+- Finds all modified documents with entity frontmatter
+- Syncs entities and relationships to the DuckDB graph
+- Updates embeddings for semantic search
 
-### 5. Semantic Search
+### 4. Semantic Search
 
-Now I can search across all my documentation:
+Now the knowledge graph powers search across all my documentation. When I ask Claude Code a question, it can search the graph for related concepts, past decisions, and connected documents.
 
-```bash
-lattice search "authentication patterns"
-```
+## Why Claude Code Integration Matters
 
-This returns documents and entities ranked by semantic similarity, not just keyword matching.
+The key insight is that **the user experience is the Claude Code conversation**, not a separate CLI tool. The Lattice CLI exists to support Claude Code agents - it's the backend that powers the slash commands.
 
-## Claude Code Integration
-
-Lattice is designed to work seamlessly with Claude Code. I created slash commands that integrate into my workflow:
-
-- `/research [topic]` - Research a topic, create documentation
-- `/entity-extract [file]` - Extract entities from a document
-- `/graph-sync` - Sync extracted entities to the graph
-
-The knowledge graph then feeds back into Claude Code through TemporalBridge (my AI memory system), giving Claude context about my past research and decisions.
+This means:
+- **Natural language interface**: Just talk to Claude about what you want to research
+- **Contextual suggestions**: Claude can suggest related documents and entities
+- **Seamless workflow**: Research, extract, sync - all without leaving your conversation
 
 ## Technical Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                        LATTICE ARCHITECTURE                         │
+│                    LATTICE + CLAUDE CODE                            │
 ├─────────────────────────────────────────────────────────────────────┤
 │                                                                     │
-│   Document                    Extraction                    Graph   │
-│   ┌─────────┐                ┌──────────┐              ┌─────────┐  │
-│   │ .md     │  ──────────▶   │  Claude  │  ─────────▶  │ DuckDB  │  │
-│   │ files   │   /extract     │  Haiku   │   /sync      │  + VSS  │  │
-│   └─────────┘                └──────────┘              └─────────┘  │
-│        │                          │                         │       │
-│        ▼                          ▼                         ▼       │
-│   ┌─────────┐                ┌──────────┐              ┌─────────┐  │
-│   │  YAML   │  ◀──────────   │ Entities │              │ Voyage  │  │
-│   │ Front-  │   Writes to    │   JSON   │              │ Embed-  │  │
-│   │ matter  │   frontmatter  │          │              │ dings   │  │
-│   └─────────┘                └──────────┘              └─────────┘  │
+│   User                     Claude Code                   Backend    │
+│   ┌─────────┐             ┌──────────┐              ┌─────────┐    │
+│   │ /research│ ─────────▶ │  Slash   │ ──────────▶  │ Lattice │    │
+│   │ /entity- │            │ Commands │              │   CLI   │    │
+│   │  extract │            │          │              │         │    │
+│   │ /graph-  │            │          │              │         │    │
+│   │  sync    │            │          │              │         │    │
+│   └─────────┘             └──────────┘              └─────────┘    │
+│        │                       │                         │         │
+│        │                       ▼                         ▼         │
+│        │                  ┌──────────┐              ┌─────────┐    │
+│        │                  │  Claude  │              │ DuckDB  │    │
+│        │                  │  Haiku   │              │  + VSS  │    │
+│        │                  │(extract) │              │         │    │
+│        │                  └──────────┘              └─────────┘    │
+│        │                       │                         │         │
+│        ▼                       ▼                         ▼         │
+│   ┌─────────┐             ┌──────────┐              ┌─────────┐    │
+│   │Response │ ◀────────── │   YAML   │ ◀─────────── │ Voyage  │    │
+│   │  with   │             │ Front-   │              │ Embed-  │    │
+│   │ context │             │ matter   │              │ dings   │    │
+│   └─────────┘             └──────────┘              └─────────┘    │
 │                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
 ### Key Components
 
-1. **CLI** (`@zabaca/lattice`): Main interface for all operations
-2. **Extractor**: Uses Claude Haiku for entity extraction
-3. **Graph Store**: DuckDB with VSS extension for vector search
-4. **Embeddings**: Voyage AI for semantic similarity
+1. **Slash Commands**: `/research`, `/entity-extract`, `/graph-sync` - the user interface
+2. **Lattice CLI** (`@zabaca/lattice`): Backend for Claude Code agents
+3. **Extractor**: Uses Claude Haiku for entity extraction
+4. **Graph Store**: DuckDB with VSS extension for vector search
+5. **Embeddings**: Voyage AI for semantic similarity
 
 ## Why Not Just Use [X]?
 
@@ -181,7 +182,7 @@ The knowledge graph then feeds back into Claude Code through TemporalBridge (my 
 
 **Neo4j**: Requires server setup. Overkill for personal documentation.
 
-Lattice fills a specific niche: **TypeScript developers who want a knowledge graph for their markdown documentation with human-initiated extraction and local-first storage.**
+Lattice fills a specific niche: **Claude Code users who want a knowledge graph for their markdown documentation with human-initiated extraction and local-first storage.**
 
 ## What's Next
 
@@ -190,23 +191,28 @@ I'm currently working on:
 - **Cross-project search**: Query across multiple documentation repositories
 - **Improved extraction**: Fine-tuning prompts for better entity recognition
 
-## Try It Out
+## Getting Started
 
+If you use Claude Code and want to try Lattice:
+
+1. Install the CLI (used by Claude Code agents):
 ```bash
-# Install globally
 bun add -g @zabaca/lattice
+```
 
-# Initialize in your docs directory
-lattice init
+2. Add the slash commands to your Claude Code project (see the [repo](https://github.com/Zabaca/lattice) for command definitions)
 
-# Extract and sync
-lattice extract docs/*.md
-lattice sync
+3. Start researching:
+```
+/research your topic here
+```
 
-# Search
-lattice search "your query"
+4. Extract and sync:
+```
+/entity-extract path/to/doc.md
+/graph-sync
 ```
 
 Source code: [github.com/Zabaca/lattice](https://github.com/Zabaca/lattice)
 
-If you're building documentation-heavy projects and want better search and discovery, give Lattice a try. I'd love to hear what you think.
+The real power comes from the Claude Code integration - your research becomes a conversation, and the knowledge graph builds naturally as you work.
