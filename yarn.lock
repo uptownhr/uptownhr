@@ -4737,14 +4737,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/ncc@npm:^0.36.1":
-  version: 0.36.1
-  resolution: "@vercel/ncc@npm:0.36.1"
+"@vercel/ncc@npm:^0.45.0":
+  version: 0.45.0
+  resolution: "@vercel/ncc@npm:0.45.0"
   dependencies:
     node-gyp: latest
   bin:
     ncc: dist/ncc/cli.js
-  checksum: dcb8db089b07a8fad64c24eef25be6bc2db7ba30582a03236e3a6d332c8653d93a45aba7fe0e01b6d64f3c5b54d23467539ac3664c113f54a9e59341ded79bf9
+  checksum: 477f13175985a9e4ea318535e2c10c52c700ae4f1ffeb02ed622bcd664714d96191ab24babe4242f66fcab8c8cbf3cfa107d110e5d2cf15af5f3a16723593fe7
   languageName: node
   linkType: hard
 
@@ -16377,7 +16377,7 @@ __metadata:
     "@types/uuid": ^9.0.0
     "@typescript-eslint/eslint-plugin": ^6.0.0
     "@typescript-eslint/parser": ^6.0.0
-    "@vercel/ncc": ^0.36.1
+    "@vercel/ncc": ^0.45.0
     astro: ^2.0.0
     axios: ^1.0.0
     class-transformer: ^0.5.1
