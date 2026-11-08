@@ -6,7 +6,7 @@ James's personal site, uptownhr.com, as an NX monorepo:
 - `apps/backend`: a NestJS/Prisma API, deployed to Fly as app `lov` (root `fly.toml`, on a GitHub release). That is an older lov backend, not lov.io (which is the Zabaca/lov repo), and nobody has checked whether it still runs.
 - `environments/`: Panfactum infrastructure (Terragrunt).
 
-How the site itself deploys is not recorded in this repo.
+The site deploys through Cloudflare Pages, connected to this repo directly (no GitHub workflow): a push to `main` publishes it, and a PR gets a preview. The only workflows are `release-please` and `fly-release` (the backend).
 
 ## Blog posts
 
