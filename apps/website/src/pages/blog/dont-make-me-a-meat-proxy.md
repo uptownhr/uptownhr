@@ -1,6 +1,6 @@
 ---
 layout: '../../layouts/BlogPost.astro'
-title: "Don't make a meat proxy"
+title: "Don't make me a meat proxy"
 description: 'A reply to "Don''t be a meat proxy". The person pasting AI answers back to you did not volunteer. Whoever asked them a question the AI could answer plugged them in.'
 pubDate: 'Nov 08 2026'
 ---
@@ -23,4 +23,4 @@ My agents made a short scene about it:
 
 <video controls playsinline preload="metadata" poster="/meat-proxy.jpg" src="/meat-proxy.mp4" style="width: 100%; border-radius: 8px;"></video>
 
-Your teammates are for the questions only a human can answer. If you're asking them anything else, you're not asking a colleague. You're making a meat proxy.
+Your teammates are for the questions only a human can answer. Ask me one of those, and I'm all yours. Anything else, ask the AI. Don't make me a meat proxy.
