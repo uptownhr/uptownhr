@@ -12,7 +12,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@actions/exec@npm:1.1.1":
+"@actions/exec@npm:^1.1.1":
   version: 1.1.1
   resolution: "@actions/exec@npm:1.1.1"
   dependencies:
@@ -3440,33 +3440,36 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nx-tools/core@npm:5.0.3":
-  version: 5.0.3
-  resolution: "@nx-tools/core@npm:5.0.3"
+"@nx-tools/core@npm:5.3.1":
+  version: 5.3.1
+  resolution: "@nx-tools/core@npm:5.3.1"
   dependencies:
-    "@actions/exec": 1.1.1
-    chalk: 4.1.2
-    ci-info: 3.8.0
+    "@actions/exec": ^1.1.1
+    chalk: ^4.1.2
+    ci-info: ^3.8.0
   peerDependencies:
-    "@nx/devkit": ^16.0.0
+    "@nx/devkit": ^16.0.0 || ^17.0.0 || ^18.0.0
     tslib: ^2.5.3
-  checksum: a2cd8d7ce00b31fbc1c08ea5c10bc0a32f689254b812700895a6394cea0417e67fbd84a1741dc48023fb590acc8590e29e65492530bb80a44c9769d210a3ca19
+  checksum: 5b9d3042effe3e88c2ccc51d218be24104c3faf654c2267c1ada9a3cea780ebc75bb44de526e0ab74cb115bdf0855ea62a45edf8f445769e74fb294768183645
   languageName: node
   linkType: hard
 
 "@nx-tools/nx-prisma@npm:^5.0.2":
-  version: 5.0.3
-  resolution: "@nx-tools/nx-prisma@npm:5.0.3"
+  version: 5.3.1
+  resolution: "@nx-tools/nx-prisma@npm:5.3.1"
   dependencies:
-    "@nx-tools/core": 5.0.3
-    semver: 7.5.4
+    "@nx-tools/core": 5.3.1
+    semver: ^7.5.4
   peerDependencies:
-    "@nx/devkit": ^16.0.0
-    "@nx/workspace": ^16.0.0
+    "@nx/devkit": ^16.0.0 || ^17.0.0 || ^18.0.0
     prisma: ^4.5.0 || ^5.0.0
     ts-node: "*"
     tslib: ^2.5.3
-  checksum: fd17b287c76b141b9d579cad30f071891b985fc7ee1a59ea0bbbeca67511186300070dde5088fce1295b08f0b253acbfdf665fd927cc67d56d53ccf9abe6f0fc
+    tsx: ^4.0.0
+  peerDependenciesMeta:
+    tsx:
+      optional: true
+  checksum: 39e905f4940881dbb45c53e35be3a94caaa023d42bbae6b309b700f32ac3fb5ca7734b39d972694f2820732fe3e6bdabc27c058f1936a8621da9e1e239a46ab5
   languageName: node
   linkType: hard
 
@@ -6162,16 +6165,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:4.1.2, chalk@npm:^4.0.0, chalk@npm:^4.0.2, chalk@npm:^4.1.0, chalk@npm:^4.1.2":
-  version: 4.1.2
-  resolution: "chalk@npm:4.1.2"
-  dependencies:
-    ansi-styles: ^4.1.0
-    supports-color: ^7.1.0
-  checksum: fe75c9d5c76a7a98d45495b91b2172fa3b7a09e0cc9370e5c8feb1c567b85c4288e2b3fded7cfdd7359ac28d6b3844feb8b82b8686842e93d23c827c417e83fc
-  languageName: node
-  linkType: hard
-
 "chalk@npm:^2.0.0, chalk@npm:^2.4.2":
   version: 2.4.2
   resolution: "chalk@npm:2.4.2"
@@ -6180,6 +6173,16 @@ __metadata:
     escape-string-regexp: ^1.0.5
     supports-color: ^5.3.0
   checksum: ec3661d38fe77f681200f878edbd9448821924e0f93a9cefc0e26a33b145f1027a2084bf19967160d11e1f03bfe4eaffcabf5493b89098b2782c3fe0b03d80c2
+  languageName: node
+  linkType: hard
+
+"chalk@npm:^4.0.0, chalk@npm:^4.0.2, chalk@npm:^4.1.0, chalk@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "chalk@npm:4.1.2"
+  dependencies:
+    ansi-styles: ^4.1.0
+    supports-color: ^7.1.0
+  checksum: fe75c9d5c76a7a98d45495b91b2172fa3b7a09e0cc9370e5c8feb1c567b85c4288e2b3fded7cfdd7359ac28d6b3844feb8b82b8686842e93d23c827c417e83fc
   languageName: node
   linkType: hard
 
@@ -6272,17 +6275,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ci-info@npm:3.8.0, ci-info@npm:^3.8.0":
-  version: 3.8.0
-  resolution: "ci-info@npm:3.8.0"
-  checksum: d0a4d3160497cae54294974a7246202244fff031b0a6ea20dd57b10ec510aa17399c41a1b0982142c105f3255aff2173e5c0dd7302ee1b2f28ba3debda375098
-  languageName: node
-  linkType: hard
-
 "ci-info@npm:^3.2.0, ci-info@npm:^3.3.1":
   version: 3.7.1
   resolution: "ci-info@npm:3.7.1"
   checksum: 72d93d5101ea1c186511277fbd8d06ae8a6e028cc2fb94361e92bf735b39c5ebd192e8d15a66ff8c4e3ed569f87c2f844e96f90e141b2de5c649f77ec34ff601
+  languageName: node
+  linkType: hard
+
+"ci-info@npm:^3.8.0":
+  version: 3.8.0
+  resolution: "ci-info@npm:3.8.0"
+  checksum: d0a4d3160497cae54294974a7246202244fff031b0a6ea20dd57b10ec510aa17399c41a1b0982142c105f3255aff2173e5c0dd7302ee1b2f28ba3debda375098
   languageName: node
   linkType: hard
 
@@ -14706,17 +14709,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:7.5.4, semver@npm:^7.5.3, semver@npm:^7.5.4, semver@npm:~7.5.4":
-  version: 7.5.4
-  resolution: "semver@npm:7.5.4"
-  dependencies:
-    lru-cache: ^6.0.0
-  bin:
-    semver: bin/semver.js
-  checksum: 12d8ad952fa353b0995bf180cdac205a4068b759a140e5d3c608317098b3575ac2f1e09182206bf2eb26120e1c0ed8fb92c48c592f6099680de56bb071423ca3
-  languageName: node
-  linkType: hard
-
 "semver@npm:^5.6.0":
   version: 5.7.1
   resolution: "semver@npm:5.7.1"
@@ -14752,6 +14744,17 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: ba9c7cbbf2b7884696523450a61fee1a09930d888b7a8d7579025ad93d459b2d1949ee5bbfeb188b2be5f4ac163544c5e98491ad6152df34154feebc2cc337c1
+  languageName: node
+  linkType: hard
+
+"semver@npm:^7.5.3, semver@npm:^7.5.4, semver@npm:~7.5.4":
+  version: 7.5.4
+  resolution: "semver@npm:7.5.4"
+  dependencies:
+    lru-cache: ^6.0.0
+  bin:
+    semver: bin/semver.js
+  checksum: 12d8ad952fa353b0995bf180cdac205a4068b759a140e5d3c608317098b3575ac2f1e09182206bf2eb26120e1c0ed8fb92c48c592f6099680de56bb071423ca3
   languageName: node
   linkType: hard
 
